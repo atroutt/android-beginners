@@ -1,8 +1,6 @@
-> Please read our slide creation guidelines in [the wiki](https://github.com/girldevelopit/gdi-slides-template/wiki). Then, delete this banner and add the specifics about your class below.
+# Android Beginners
 
-# Add Your Course Title Here
-
-Slides and materials are hosted at [http://example.com/](http://example.com/).
+Slides and materials are hosted at [http://atroutt.github.io/android-beginners](http://atroutt.github.io/android-beginners).
 
 ## Course description
 
@@ -13,9 +11,6 @@ Use this space for a short description of your course. We recommend using the de
 **Dates:** 
 
 **Location:** 
-
-A limited number of scholarships are available for those with a financial hardship. To apply, contact us at...
-
 
 ### Prerequisites:
 
