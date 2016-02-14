@@ -9,8 +9,12 @@ This is a practical introduction to app development on Android. You are going to
 I think it is just as important to build things from scratch as it is to understand existing code and take things apart. Therefore the coding exercises will be a combination of read and edit, build from pieces, and start from scratch.
 
 **Cost:** TBA
+
 **Dates:** TBA 2016
+
 **Location:** TBA in Philadelphia, PA
+
+### Instructor
 
 [Audrey Troutt](http://audreytroutt.com/) is the director of mobile development at SnipSnap in Philadelphia, PA. Previously Audrey lead Android and iOS SDK development at Artisan Mobile in Philadelphia. In addition to being a polyglot programmer and full-stack developer with seven years experience, Audrey is passionate about clean code, beautiful apps, automation and vibrant communities.
 
