@@ -47,4 +47,4 @@ You should have:
 
 ### Instructor:
 
-[Audrey Troutt](http://audreytroutt.com/) is the director of mobile development at SnipSnap in Philadelphia, PA. Previously Audrey lead Android and iOS SDK development at Artisan Mobile in Philadelphia. In addition to being a polyglot programmer and full-stack developer with seven years experience, Audrey is passionate about clean code, beautiful apps, automation and vibrant communities.
+[Audrey Troutt](http://audreytroutt.com/) is the director of mobile development at [SnipSnap](http://snipsnap.it) in Philadelphia, PA. Previously Audrey lead Android and iOS SDK development at Artisan Mobile in Philadelphia. In addition to being a polyglot programmer and full-stack developer with seven years experience, Audrey is passionate about clean code, beautiful apps, automation and vibrant communities.
