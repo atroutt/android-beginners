@@ -14,7 +14,7 @@ I think it is just as important to build things from scratch as it is to underst
 
 **Location:** TBA in Philadelphia, PA
 
-### Instructor
+### Instructor:
 
 [Audrey Troutt](http://audreytroutt.com/) is the director of mobile development at SnipSnap in Philadelphia, PA. Previously Audrey lead Android and iOS SDK development at Artisan Mobile in Philadelphia. In addition to being a polyglot programmer and full-stack developer with seven years experience, Audrey is passionate about clean code, beautiful apps, automation and vibrant communities.
 
@@ -30,7 +30,7 @@ You should have:
 
 ### Tech requirements:
 
- - Your laptop (Mac or Linux preferred).
+ - Your laptop (Mac or Linux strongly preferred).
  - A Google account. If you don't already have one you can [create one for free](https://accounts.google.com/signup)
  - [Download and install Android Studio](http://developer.android.com/sdk/index.html)
  - (Nice to have) an Android phone with Android Jellybean (4.1-4.3), KitKat (4.4), Lollipop (5.x), or Marshmallow (6.x). Don't forget a USB cable to connect your device to your laptop and [enable developer options](http://www.androidauthority.com/enable-developer-options-569223/) on your device to be able to connect with your computer.
