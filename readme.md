@@ -1,6 +1,8 @@
 # Android Beginners
 
-Slides and materials are hosted at [http://atroutt.github.io/android-beginners](http://atroutt.github.io/android-beginners).
+This is the source for an IRL Android development class taught in Philadelphia, PA. Slides and materials are hosted at [http://atroutt.github.io/android-beginners](http://atroutt.github.io/android-beginners).
+
+If you are looking for an online class, check out [free Anroid classes from Google](http://developer.android.com/training/index.html), like  [this one](https://www.udacity.com/course/developing-android-apps--ud853).
 
 ## Course description
 
