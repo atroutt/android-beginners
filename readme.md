@@ -1,8 +1,8 @@
 # Android Beginners
 
-This is the source for an IRL Android development class taught in Philadelphia, PA. Slides and materials are hosted at [http://atroutt.github.io/android-beginners](http://atroutt.github.io/android-beginners).
+This is the source for an Android development class taught in Philadelphia, PA with [Girl Develop It Philly](http://www.meetup.com/Girl-Develop-It-Philadelphia/). Slides and materials are hosted at [http://atroutt.github.io/android-beginners](http://atroutt.github.io/android-beginners).
 
-If you are looking for an online class, check out [free Anroid classes from Google](http://developer.android.com/training/index.html), like  [this one](https://www.udacity.com/course/developing-android-apps--ud853).
+If you are looking for an online class that covers similar material, check out the [free Android classes from Google](http://developer.android.com/training/index.html), like [this one](https://www.udacity.com/course/developing-android-apps--ud853).
 
 ## Course description
 
