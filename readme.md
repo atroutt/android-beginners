@@ -26,6 +26,8 @@ You should have:
 
 (b) be familiar with programming concepts like variables, methods, classes, arrays, conditionals, and loops.
 
+and have a basic knowledge of source control with git for cloning repos, making commits, and pushing changes to github.
+
 ### Tech requirements:
 
  - Your laptop (Mac or Linux strongly preferred)
@@ -34,6 +36,7 @@ You should have:
  - **Nice to have** an Android phone with Android Jellybean (4.1-4.3), KitKat (4.4), Lollipop (5.x), or Marshmallow (6.x)
     - Don't forget a USB cable to connect your device to your laptop
     - [Enable developer options](http://www.androidauthority.com/enable-developer-options-569223/) on your device to be able to connect with your computer
+ - A Github account. If you don't already have a github account you can [create one for free](https://github.com/personal)
 
 ### Topics covered:
 

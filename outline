@@ -1,10 +1,21 @@
 ---------------------------
+0. Ahead of Time
+
+In order to get ready for class you need to do a few things ahead of time:
+
+- GOOGLE ACCOUNT If you don't already have a Google account you can [create one for free](https://accounts.google.com/signup)
+- ANDROID STUDIO [Download and install Android Studio](http://developer.android.com/sdk/index.html)
+- DEVICE PREP if you have an Android phone with Android Jellybean (4.1-4.3), KitKat (4.4), Lollipop (5.x), or Marshmallow (6.x) [Enable developer options](http://www.androidauthority.com/enable-developer-options-569223/) on your device to be able to connect with your computer
+- GITHUB ACCOUNT If you don't already have a github account you can [create one for free](https://github.com/personal)
+
+---------------------------
 1. Building your first app on your first day
 * TOPICS COVERED: Android Studio, Java Class, Imports
 * If you've never built an app and run it on your phone, you will!
 * Walk through create a new app flow in android Studio
 * copy and paste coding so that you have something fun
 * PROJECT: First App
+
 
 ---------------------------
 2. Anatomy of an app
