@@ -1,0 +1,45 @@
+---------------------------
+1. Building your first app on your first day
+* TOPICS COVERED: Android Studio, Java Class, Imports
+* If you've never built an app and run it on your phone, you will!
+* Walk through create a new app flow in android Studio
+* copy and paste coding so that you have something fun
+* PROJECT: First App
+
+---------------------------
+2. Anatomy of an app
+* TOPICS COVERED: Application, Activity, Intent, Navigation, Views
+
+APP TO PREP: Material app with side bar and a bunch of screens with different layouts (tab, grid, list, plain) that the students can hook up.
+
+* PROJECT: Connect the screens
+
+---------------------------
+3. APIs and authentication
+* TOPICS COVERED:
+APP TO PREP:
+* PROJECT: Log in with Google.
+
+---------------------------
+4. Chat and messaging
+* TOPICS COVERED:
+APP TO PREP:
+* PROJECT: Firebase-powered chat app, AndroidBeginnersChat chat with your classmates!
+
+---------------------------
+5. Maps and location
+* TOPICS COVERED:
+APP TO PREP:
+* PROJECT: add location-awareness to AndroidBeginnersChat
+
+---------------------------
+6. Cameras and photos
+* TOPICS COVERED:
+APP TO PREP:
+* PROJECT: add share photos to AndroidBeginnersChat
+
+---------------------------
+7. Publishing to the play store
+* TOPICS COVERED: Building APK, Creating Google Play listing (requires $100 license)
+
+If time allows I'll give an introduction to the app publishing process. What accounts you need and what the process looks like for a hobby app vs. a business.

@@ -40,9 +40,9 @@ You should have:
  - Building your first app on your first day
  - Anatomy of an app
  - APIs and authentication
+ - Chat and messaging
  - Maps and location
  - Cameras and photos
- - Chat and messaging
  - Publishing to the play store
 
 ### Instructor:
