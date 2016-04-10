@@ -1,3 +1,22 @@
+Course Prep Estimates : 8 hours per section, plus 16 hours of app development. = 72 hours total. In 4 hr chunks is 18 weeks of work
+Estimated completion: mid-August
+
+- [ ] Create completed material app
+- [ ] Create completed chat app with firebase+google auth and chat, map and camera.
+- [ ] Build out anatomy of an app lesson
+- [ ] Build anatomy of an app starter code (material app)
+- [ ] Build out APIs and auth lesson
+- [ ] Build APIs and auth app starer code (chat app)
+- [ ] Build out Chat and messaging lesson
+- [ ] Build Chat and messaging app starter code (chat app)
+- [ ] Build out Maps and location lesson
+- [ ] Build Maps and location app starter code (chat app)
+- [ ] Build out Cameras and photos lesson
+- [ ] Build Cameras and photos app starter code (chat app)
+- [ ] Build out publishing to play store lesson
+- [ ] Polish course slides
+- [ ] Publish starter code to repo
+
 ---------------------------
 0. Ahead of Time
 
