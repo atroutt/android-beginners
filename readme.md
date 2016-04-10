@@ -6,7 +6,7 @@ If you are looking for an online class that covers similar material, check out t
 
 ## Course description
 
-This is a practical introduction to app development on Android. You are going to build five different apps. At the end of this class you will know not only how to start a new app project, but also how to implement some of the most common features in Android apps. You will get acquainted with standard Android, Google, and open source libraries for building Android apps. We will be writing code in Java and building, installing, and even sharing(!) apps.
+This is a practical introduction to app development on Android. You are going to build five apps. At the end of this class you will know not only how to start a new app project, but also how some of the most common features in Android apps are implemented. You will get acquainted with standard Android, Google, and open source libraries for building Android apps. We will be writing code in Java and building, installing, and even sharing(!) apps.
 
 I think it is just as important to build things from scratch as it is to understand existing code and take things apart. Therefore the coding exercises will be a combination of read and edit, build from pieces, and start from scratch.
 
