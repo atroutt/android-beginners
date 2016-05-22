@@ -99,7 +99,7 @@ var Reveal = (function(){
 			transitionSpeed: 'default', // default/fast/slow
 
 			// Transition style for full page slide backgrounds
-			backgroundTransition: 'default', // default/linear/none
+			backgroundTransition: 'none', // default/linear/none
 
 			// Parallax background image
 			parallaxBackgroundImage: '', // CSS syntax, e.g. "a.jpg"
