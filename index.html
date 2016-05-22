@@ -18,6 +18,7 @@
 		<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
 		<!-- dark editor--><link rel="stylesheet" href="lib/css/dark.css">
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+
 		<link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -49,7 +50,6 @@
         <!-- Opening -->
 				<section data-transition="none">
 					<h1>Android for Beginners</h1>
-                    <!-- <img src="img/circle-gdi-logo.png" alt="GDI Logo"/> -->
 					<h3>A practical introduction to app development on Android</h3>
 					<p>
 						<small>Course source materials at <a href ="https://github.com/atroutt/android-beginners">on github</a>.</small>
@@ -223,75 +223,59 @@
 					</aside>
 				</section>
 
-
+				<!-- Examples of code slides-->
 				<section>
 					  <h2>But wait! We teach code</h2>
-					  <p>For HTML -- Surround your code with a div class "xml", then pre, then code.</p>
-           <pre>
-            <code>
-              &lt;ul>
-                &lt;li>No order here&lt;/li>
-                &lt;li>Or here&lt;/li>
-                &lt;li>Or here&lt;/li>
-                &lt;li>Or here&lt;/li>
-              &lt;/ul&gt;
-            </code>
-          </pre>
+					  <p>For HTML -- Surround your code pre, then code class "xml".</p>
+<pre><code class="xml">&lt;ul class="demo"&gt;
+  &lt;li&gt;No order here&lt;/li&gt;
+  &lt;li&gt;Or here&lt;/li&gt;
+  &lt;li&gt;Or here&lt;/li&gt;
+  &lt;li&gt;Or here&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
 				</section>
 
 				<section>
 					  <h2>But wait! We teach code</h2>
 					  <p>We can also make code editable</p>
-					  <pre>
-					    <code contenteditable>
-                &lt;ul>
-                  &lt;li>No order here&lt;/li>
-                  &lt;li>Or here&lt;/li>
-                  &lt;li>Or here&lt;/li>
-                  &lt;li>Or here&lt;/li>
-                &lt;/ul&gt;
-              </code>
-
-            </pre>
+<pre><code contenteditable class="xml">&lt;ul class="demo"&gt;
+  &lt;li&gt;No order here&lt;/li&gt;
+  &lt;li&gt;Or here&lt;/li&gt;
+  &lt;li&gt;Or here&lt;/li&gt;
+  &lt;li&gt;Or here&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
 				</section>
 
 
 				<section>
 					  <h2>But wait! We teach code</h2>
 					  <p>CSS</p>
-					  <pre>
-              <code contenteditable class ="css">
-                body{
-                  background-color: #ffffff;
-                }
-              </code>
-            </pre>
+<pre><code contenteditable class ="css">body{
+  background-color: #ffffff;
+}
+</code></pre>
 				</section>
 
 				<section>
 					  <h2>But wait! We teach code</h2>
 					  <p>Javascript</p>
-					  <pre>
-              <code contenteditable class ="javascript">
-                function helloWorld(){
-                  var name = 'GDI';
-                  alert("Hi, " + name)
-                }
-              </code>
-            </pre>
+<pre><code contenteditable class ="javascript">function helloWorld(){
+  var name = 'GDI';
+  alert("Hi, " + name)
+}
+</code></pre>
 				</section>
-
+				
  				 <section>
  					  <h2>But wait! We teach code</h2>
  					  <p>Java</p>
- 					  <pre>
-               <code contenteditable class ="java">
-                public void helloWorld(){
-                  String name = "GDI";
-                  System.out.println("Hi," + name)
-                }
-               </code>
-             </pre>
+<pre><code contenteditable class ="java">public void helloWorld(){
+  String name = "GDI";
+  System.out.println("Hi," + name)
+}
+</code></pre>
  				</section>
 
 
@@ -339,17 +323,17 @@
 						<h2>Basement Level 1</h2>
 						<p>Press down or up to navigate.</p>
 						<a href="#/14/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-  						<a href="#/14" class="image">
-  							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
+						<a href="#/14" class="image">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
 						</a>
 					</section>
 					<section>
 						<h2>Basement Level 2</h2>
 						<a href="#/14/3" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-  						<a href="#/14/1" class="image">
-  							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
+						<a href="#/14/1" class="image">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
 						</a>
 					</section>
 					<section>
