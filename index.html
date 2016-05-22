@@ -47,7 +47,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
         <!-- Opening -->
-				<section>
+				<section data-transition="none">
 					<h1>Android for Beginners</h1>
                     <!-- <img src="img/circle-gdi-logo.png" alt="GDI Logo"/> -->
 					<h3>A practical introduction to app development on Android</h3>
@@ -59,15 +59,14 @@
 					</p>
 				</section>
 
-				<section>
+				<section data-transition="none">
 					<h2>Is this class for you?</h2>
-					<p class="fragment">You should be..</p>
-					<ol>
+					<p>You should be..</p>
+					<ul>
 						<li class="fragment">curious and excited to learn about how apps are built.</li>
 						<li class="fragment">prepared to face challenges and have some fun along the way.</li>
 						<li class="fragment">already have some experience with programming concepts like variables, methods, classes, arrays, conditionals, and loops.</li>
-					</ol>
-					<p class="fragment">You are not expected to have any previous Android or even Java experience for this class.</p>
+					</ul>
 
 					<aside class="notes">
 						You are not expected to have any previous Android or even Java experience for this class. However, to move things along it would help if this wasn't your very first introduction to programming in general.
@@ -77,40 +76,56 @@
 				</section>
 
 				<!-- AHEAD OF TIME  -->
-				<section>
-					<section>
+				<section data-transition="none">
+					<section data-transition="none">
 						<h2>Before the first class</h2>
-						<ol>
+						<ul>
 							<li>Get a Google Account</li>
 							<li>Get a Github Account</li>
 							<li>Install Android Studio</li>
-							<li>Prep your Android device</li>
-						</ol>
-						<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+							<li>Optional: Prep your Android device</li>
+							<li>Bonus: learn about Java and Android</li>
+						</ul>
+						<blockquote>
+							HINT: Press <strong>Down Arrow</strong> to navigate to the sub-sections below here.
+						</blockquote>
 					</section>
-					<section>
+					<section data-transition="none">
 						<h2>Google Account</h2>
-						<p>If you don't already have a Google account you can <a href="https://accounts.google.com/signup" target="_blank">create one for free</a>.</p>
-						<p>We are going to use this for logging in to the apps we will be creating.</p>
+						<p>If you have one, <a href="https://accounts.google.com/signup" target="_blank">create one for free</a>.</p>
+						<aside>We are going to use this for logging in to the apps we will be creating.</aside>
 					</section>
 					<section>
 						<h2>Github Account</h2>
-						<p>If you don't already have a Github account you can <a href="https://github.com/personal" target="_blank">create one for free</a>.</p>
+						<p>If you don't have one, <a href="https://github.com/personal" target="_blank">create one for free</a>.</p>
 						<p>You will need this to get the starter code for this class and to push up your work to get feedback from your teachers and classmates.</p>
 					</section>
 					<section>
 						<h2>Android Studio</h2>
-						<p>If you don't have it already. You need to download and install <a href"http://developer.android.com/sdk/index.html">Android Studio</a>.</p>
+						<p>If you don't have it already, <a href"http://developer.android.com/sdk/index.html">download and install Android Studio</a>.</p>
 						<p>This is the editor we will use to write our apps.</p>
 					</section>
 					<section>
-						<h2>Prep your device</h2>
-						<p>If you have an an Android phone with Android Jellybean (4.1-4.3), KitKat (4.4), Lollipop (5.x), or Marshmallow (6.x), then you need to <a href"http://www.androidauthority.com/enable-developer-options-569223/">enable developer options</a> on your device to be able to connect it with your computer to run your apps.
-						</p>
-						<p>An Android phone is not required for this course, but it is really fun to have. If you don't have a device you can use the Android emulator with Android Studio.</p>
+						<h2>Optional: Prep your Android device</h2>
+						<p>If you have an an Android phone <a href"http://www.androidauthority.com/enable-developer-options-569223/">enable developer options</a> so that you can install and run your own apps.</p>
+						<p>An Android phone is not required for this course.</p>
+						<aside class="notes">
+							<p>Your phone needs to be running Android Jellybean (4.1-4.3), KitKat (4.4), Lollipop (5.x), or Marshmallow (6.x).</p>
+							<p>An Android phone is not required for this course, but it is fun to have so you can show your friends what you've built. If you don't have a device you can use the Android emulator with Android Studio. Luckily for you the Android emulators have gotten faster and faster in recent years.</p>
+						</aside>
+					</section>
+					<section>
+						<h2>Bonus: Learn about Java and Android</h2>
+						<p>If you just can't wait to get started, here's some resources to start learning now:</p>
+						<ul>
+							<li><a href="https://developer.android.com/training/index.html">Google's Android Training</a> specifically, <a href="https://developer.android.com/training/basics/firstapp/index.html">Building your First App</a> (free)</li>
+							<li><a href="https://www.udacity.com/course/developing-android-apps--ud853">Udacity's Developing Android Apps</a> (free)</li>
+							<li><a href="https://www.udacity.com/course/how-to-use-git-and-github--ud775">Udacity's How to use Git and Github</a> (free)</li>
+							<li><a href="http://amzn.com/0596009208">Head First Java, 2nd Edition</a> by Kathy Sierra and Bert Bates</li>
+							<li><a href="https://www.udemy.com/java-tutorial/">Udemy's Java Tutorial for Complete Beginners</a> (free)</li>
+						</ul>
 					</section>
 				</section>
-
 				<section>
 					<h2>Course Overview</h2>
 					<ol>
@@ -123,7 +138,7 @@
 						<li>BONUS: Publishing to the Play Store</li>
 					</ol>
 					<blockquote>
-						HINT: Press <strong>ESC</strong> to enter the slide overview. Hold down <strong>alt</strong> and click on any element to zoom in on it. <strong>Alt + click</strong> anywhere to zoom back out.
+						HINT: Press <strong>ESC</strong> to enter the slide overview.
 					</blockquote>
 				</section>
 
