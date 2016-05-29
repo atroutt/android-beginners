@@ -80,7 +80,6 @@
 						<h2>Before the first class</h2>
 						<ul>
 							<li>Get a Google Account</li>
-							<li>Get a Github Account</li>
 							<li>Install Android Studio</li>
 							<li>Download the App Code</li>
 							<li>Optional: Prep your Android device</li>
@@ -96,59 +95,18 @@
 						<p class="left-align">We are going to use this for logging in to the apps we will be creating.</p>
 					</section>
 					<section>
-						<h2>Github Account</h2>
-						<p class="left-align">1. If you don't have one, <a href="https://github.com/personal" target="_blank">create one for free</a>.</p>
-						<p class="left-align">You can use this to get the starter code for this class and to push up your work to get feedback from your teachers and classmates.</p>
-						<p class="left-align" style="margin-top:40px;">2. Set up git on your computer (<a href="https://help.github.com/articles/set-up-git/">Mac/Linux</a>) (<a href="https://help.github.com/articles/set-up-git/#platform-windows">Windows</a>)</p>
-						<p class="left-align" style="margin-top:20px;"><small class="yellow">
-							PRO TIP: Git and GitHub are not technically required for the class, but it's a good idea for you to use git and have a github account as a developer.
-						</small></p>
-					</section>
-					<section>
 						<h2>Android Studio</h2>
 						<p class="left-align">If you don't have it already, <a href"http://developer.android.com/sdk/index.html">download and install Android Studio</a>.</p>
 						<p class="left-align">This is the editor we will use to write our apps.</p>
 					</section>
 					<section>
-						<h2>Get Code (Download)</h2>
-						<p class="left-align">You have two options for getting the code for this course: download or fork.</p>
-						<p class="left-align">Downloading is simpler:</p>
+						<h2>Get Code</h2>
+						<p class="left-align">Download the code for this class:</p>
 						<ol>
-							<li>Go to <a href="https://github.com/atroutt/AndroidBeginnerFirstApp" target="_blank">GitHub atroutt/AndroidBeginnerFirstApp</a></li>
 							<img width="30%" style="float:right" src="img/first-download-zip.png" />
+							<li>Go to <a href="https://github.com/atroutt/android-beginners" target="_blank">GitHub atroutt/android-beginners</a></li>
 							<li>On the top right press "Clone or download" and click "Download ZIP"</li>
-							<li>Follow the same steps for <a href="https://github.com/atroutt/AndroidBeginnerChat" target="_blank">GitHub atroutt/AndroidBeginnerChat</a></li>
-							<li>On your computer, open the zip files with your favorite unzip program and put the 'AndroidBeginnerFirstApp' and 'AndroidBeginnerChat' folders somewhere you can find them later.</li>
-						</ol>
-					</section>
-					<section>
-						<h2>Get Code (Fork)</h2>
-						<p class="left-align">The alternate option for getting the course code is to fork it from GitHub.</p>
-						<p class="left-align">Forking is more complex, but it has multiple benefits:</p>
-						<ul>
-							<li>You can save your work off of your computer so it can't get lost</li>
-							<li>I can give you code help outside of class</li>
-							<li>You can keep the app on your GitHub profile as part of your portfolio of past work</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Get Code (Fork)</h2>
-						<p class="left-align">Here's how to fork</p>
-						<ol>
-							<li><a href="https://github.com/login">Sign in to GitHub</a></li>
-							<li>Go to <a href="https://github.com/atroutt/AndroidBeginnerFirstApp" target="_blank">GitHub atroutt/AndroidBeginnerFirstApp</a></li>
-							<li>On the top right press "Fork" to fork the repo to your personal GutHub account</li>
-							<li>From your fork of the AndroidBeginnerFirstApp repository, click "Clone or download"</li>
-							<li>Choose 'clone with HTTPS' and copy the url. It should look something like https://github.com/YOUR-USERNAME/AndroidBeginnerFirstApp.git</li>
-						</ol>
-					</section>
-					<section>
-						<h2>Get Code (Fork)</h2>
-						<ol start="6">
-							<li>On your computer, open a terminal (Mac/Linux) or Git Bash (Windows)</li>
-							<li>Type git clone, and then paste the URL you copied in Step 5. It will look like this, with your GitHub username instead of YOUR-USERNAME: <pre><code class="bash">git clone https://github.com/YOUR-USERNAME/AndroidBeginnerFirstApp.git</code></pre></li>
-							<li>Press Enter. Your local clone will be created.</li>
-							<li>Go to <a href="https://github.com/atroutt/AndroidBeginnerFirstApp" target="_blank">GitHub atroutt/AndroidBeginnerChat</a> and repeat these instructions from Step 3 (fork and clone locally)</li>
+							<li>On your computer, open the zip files with your favorite unzip program and put the 'android-beginners' folder somewhere you can find it later. This repo contains the source for both of the apps we will be using in this class in addition to these slides.</li>
 						</ol>
 					</section>
 					<section>
@@ -199,13 +157,9 @@
 					</section>
 					<section>
 						<h2>Download App Code</h2>
-						<p class="left-align">If you haven't already, <br><a href="https://github.com/atroutt/AndroidBeginnerFirstApp/archive/master.zip">download the source code for the first app</a> (zip).</p>
-
+						<p class="left-align">If you haven't already, <br><a href="https://github.com/atroutt/android-beginners/archive/master.zip">download the source code for the first app</a> (zip).</p>
 						<p class="left-align" style="margin-top:40px">Alternatively, clone the repo using git:</p>
-						<pre><code class ="bash">git clone git@github.com:atroutt/AndroidBeginnerFirstApp.git</code></pre>
-						<p class="left-align" style="margin-top:20px;"><small class="yellow">
-							PRO TIP: If you <a href="https://help.github.com/articles/fork-a-repo/">fork</a> my repo first you can push your work up to github and keep it in your portfolio. This will also make it possible for me to do code reviews for you outside of class.
-						</small></p>
+						<pre><code class ="bash">git clone git@github.com:atroutt/android-beginners.git</code></pre>
 					</section>
 					<section>
 						<h2>Import Project</h2>
@@ -242,18 +196,205 @@
 				<section>
 					<section>
 						<h2>Anatomy of an app</h2>
+						<p>Let's dissect an app!</p>
+						<img src="img/anatomy-apps.png"/>
 					</section>
 					<section>
 						<h2>Application</h2>
-						<p></p>
+						<p>This is an app, also known as an Application</p>
+						<img src="img/anatomy-application-overlay.png"/>
+					</section>
+					<section>
+						<h2>Application</h2>
+						<p>Every app has one Application class</p>
+						<img src="img/anatomy-application.png"/>
 					</section>
 					<section>
 						<h2>Activity</h2>
-						<p></p>
+						<p>An app usually has many screens.</p>
+						<p>These are called Activities.</p>
+						<img src="img/anatomy-activities.png"/>
+					</section>
+					<section>
+						<h2>Activity</h2>
+						<p>Here's a screen from our app. It is defined by an Activity class you'll see later.</p>
+						<img src="img/anatomy-detail-activity.png"/>
 					</section>
 					<section>
 						<h2>View</h2>
-						<p></p>
+						<p>An Activity usually has many views</p>
+						<img src="img/anatomy-views-overlay.png"/>
+					</section>
+					<section>
+						<h2>View</h2>
+						<p>An Activity usually has many views</p>
+						<img src="img/anatomy-views.png"/>
+					</section>
+				</section>
+
+			 <!-- Just Enough Java -->
+
+				<section>
+					<section>
+						<h2>But first</h2>
+						<h2>Just Enough Java</h2>
+						<aside class="notes">
+								Before I can start showing you the code that your apps are made of, you are going to need just a tiny bit of Java.
+						</aside>
+					</section>
+					<section>
+						<h2>Just Enough Java</h2>
+						<p>What does all this mean?</p>
+<pre><code class ="java">package com.audreytroutt.androidbeginners.firstapp;
+
+import android.app.Application;
+
+public class MyFirstApplication extends Application {
+
+    int toastLength = Toast.LENGTH_LONG;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        showToast("I have been created!");
+    }
+
+    public void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+}
+</code></pre>
+						<aside class="notes">
+								Before I can start showing you the code that your apps are made of, you are going to need just a tiny bit of Java.
+						</aside>
+					</section>
+					<section>
+						<h2>Just Enough Java</h2>
+						<p>What does all this mean?</p>
+<pre><code class ="java">package com.audreytroutt.androidbeginners.firstapp;
+
+import android.app.Application; // import
+
+public class MyFirstApplication extends Application { // class
+
+    int toastLength = Toast.LENGTH_LONG; // field
+
+    @Override
+    public void onCreate() { // method
+        super.onCreate();
+        showToast("I have been created!");
+    }
+
+    public void showToast(String message) { // method
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+}
+</code></pre>
+						<aside class="notes">
+								Really quick, here's what I mean by class, field, method, and comment.
+						</aside>
+					</section>
+					<section>
+						<h2>Just Enough Java</h2>
+						<p>Anything after // is a <strong class="green">comment</strong> in Java.</p>
+					  <pre><code contenteditable class ="java">// This is a comment</code></pre>
+					  <aside class="notes">
+						  Let's start with something easy: anything after double forward slashes is a comment.
+					  </aside>
+					</section>
+					<section>
+						<h2>Just Enough Java</h2>
+						<p>Every line of code must end with a <strong class="green">semi-colon</strong>;</p>
+					  <pre><code contenteditable class ="java">int numberOfErrors = 0;</code></pre>
+					  <aside class="notes">
+						  Let's start with something easy: you will not be able to compile if you forget your semi-colons.
+					  </aside>
+					</section>
+					<section>
+						<h2>Just Enough Java</h2>
+						<p class="left-align">Everything in Java is an object.</p>
+						<p class="left-align">A <strong class="green">class</strong> is the definition of an object in Java</p>
+						<pre><code contenteditable class ="java">// this is a class
+public class MyFirstApplication extends Application {
+    // your fields and methods go in here
+}</code></pre>
+						<p class="left-align">All of your code goes inside of classes.</p>
+						<aside class="notes">
+							Everything in Java is an object and objects are defined by classes. This is an Application class called MyFirstApplication.
+							<br>
+							All of your code goes inside of classes.
+							<br>
+							You can see here that this says MyFirstApplication extends Application. That means MFA *is an* Application--it has all the fields and methods of Application PLUS anything added here in this file.
+						</aside>
+					</section>
+					<section>
+						<h2>Just Enough Java</h2>
+						<p class="left-align">A <strong class="green">method</strong> defines the behavior of your class.</p>
+						<p class="left-align">Everything your app does will be defined inside of methods inside of classes.</p>
+<pre><code contenteditable class ="java">public void showToast(String message) { // this is a method
+    Toast.makeText(this, message, toastLength).show();
+}
+</code></pre>
+					<aside class="notes">
+						A method defines the behavior of your class. Your classes will have many methods. Everything your app does will be defined inside of methods inside of classes.
+
+						Methods have visibility (public, private), return type (String, void), name (showToast), and maybe parameters (inside the parens)
+
+						Here is a method called showToast that takes a message as a parameter. Inside the showToast method we call another method on a class called Toast to tell Android to display the little pop up message for the specified duration.
+					</aside>
+					</section>
+					<section>
+						<h2>Just Enough Java</h2>
+						<p class="left-align">A <strong class="green">field</strong> holds some data for your object.</p>
+<pre><code contenteditable class ="java">public class MyFirstApplication extends Application {
+
+    int toastLength; // this is a field
+
+    public void showToast(String message) {
+        Toast.makeText(this, message, toastLength).show();
+    }
+}
+</code></pre>
+					<p class="left-align" style="margin-top:20px;"><small class="yellow">
+						PRO TIP: always put your fields at the top of your class, above any methods.
+					</small></p>
+					<aside class="notes">
+						A field is where you can hold data for your object.
+						<br>
+						Fields have a type (View, int, String, long) and a name (like toastLength).
+						<br>
+						In this case my Application has a field called toastLength. It's an integer.
+						<br>
+						In my showToast method I'm using the value of toastLength to determine how long the toast message is displayed on the screen.
+					</aside>
+					</section>
+					<section>
+						<h2>Just Enough Java</h2>
+						<p class="left-align">Up at the top above the class body there are two things you will see: the package and import declarations.</p>
+<pre><code contenteditable class ="java">package com.audreytroutt.androidbeginners.firstapp;
+
+import android.app.Application;
+import android.widget.Toast;
+
+import java.util.Date;
+</code></pre>
+            <p class="left-align"><strong class="green">package</strong> is like a folder path to your class--it will be auto-generated for you.</p>
+            <p class="left-align"><strong class="green">import</strong> is used to include other code into your class.</p>
+
+						<aside class="notes">
+							Up at the top above the class body you will often see a lot of import statements. This is how you can make other code accessible to you in your class.
+							<br>
+							You usually don't have to type this yourself. I will show you how to automatically import based on Android Studio's suggestions.
+							<br>
+							On a mac the keyboard shortcut is option+return.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Anatomy of an App (Continued)</h2>
+						<p>Now we can talk about how you navigate between Activities</p>
 					</section>
 					<section>
 						<h2>Intent</h2>
