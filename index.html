@@ -394,224 +394,316 @@ import java.util.Date;
 				<section>
 					<section>
 						<h2>Anatomy of an App (Continued)</h2>
-						<p>Now we can talk about how you navigate between Activities</p>
+						<p>Let's dissect an app!</p>
+						<img src="img/anatomy-apps.png"/>
+					</section>
+					<section>
+						<h2>Application</h2>
+						<p>This is an app, also known as an Application</p>
+						<img src="img/anatomy-application-overlay.png"/>
+					</section>
+					<section>
+						<h2>Application</h2>
+						<p>Your application is always represented in your Application's Manifest, AndroidManifest.xml.</p>
+						<img src="img/anatomy-manifest.png"/>
+					</section>
+					<section>
+						<h2>Application</h2>
+						<p class="left-align">The Android Manifest is an XML file that declares things like the name of your Application, what Activities it includes, and which Activity should be displayed on launch.</p>
+
+<pre><code contenteditable class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    package=&quot;com.audreytroutt.androidbeginners.firstapp&quot;&gt;
+
+    &lt;application
+        android:allowBackup=&quot;true&quot;
+        android:icon=&quot;@mipmap/ic_launcher&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:supportsRtl=&quot;true&quot;
+        android:theme=&quot;@style/AppTheme&quot;
+        android:name=&quot;.MyFirstApplication&quot;&gt;
+        &lt;activity
+            android:name=&quot;.MainActivity&quot;
+            android:label=&quot;Welcome to the First App!&quot;
+            android:theme=&quot;@style/AppTheme.NoActionBar&quot;&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+        &lt;activity
+            android:name=&quot;.PaintingListActivity&quot;
+            android:label=&quot;Paintings (List)&quot;
+            android:parentActivityName=&quot;.MainActivity&quot;&gt;
+        &lt;/activity&gt;
+        &lt;activity
+            android:name=&quot;.PaintingDetailActivity&quot;
+            android:parentActivityName=&quot;.MainActivity&quot;&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+&lt;/manifest&gt;
+</code></pre>
+
+					</section>
+					<section>
+						<h2>Application</h2>
+						<p class="left-align">An instance of your Application class is created when your app launches and sticks around until your app is stopped.</p>
+						<p class="left-align">You are not required to create your own Application class implementation. There is a default that works well enough for simple use cases.</p>
+					</section>
+					<section>
+					  <h2>Application</h2>
+					  <p class="left-align">If you do create your own implementation it has to extend android.app.Application. It will look something like this:</p>
+						<pre><code contenteditable class="java">package com.audreytroutt.androidbeginners.firstapp;
+
+import android.app.Application;
+
+public class MyFirstApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        // At this point my first application was just created
+    }
+}
+</code></pre>
+						<aside class="notes">
+							This is a super simple Application implememtation. It doesn't really do anything, but it is there. The one method here is onCreate, which is called by the Android operating system just after your application is first launched.
+
+						  The name of this class "MyFirstApplication" could be anything we want. What makes it our application class is that it extends Application.
+							We might see later some examples where you can extend a class indirectly (extend a class that extends Application, etc.)
+						</aside>
+					</section>
+					<section>
+						<h2>Activity</h2>
+						<p>As we learned earlier, an app can have many Activities.</p>
+						<img src="img/anatomy-activities.png"/>
+					</section>
+					<section>
+						<h2>Activity</h2>
+						<p>Here's a screen from our app.</p>
+						<img src="img/anatomy-detail-activity.png"/>
+					</section>
+					<section>
+						<h2>Activity</h2>
+						<p class="left-align">Activities are registered in your Application Manifest</p>
+						<p class="left-align">Here you can see three Activities for my app.</p>
+						<pre><code contenteditable class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    package=&quot;com.audreytroutt.androidbeginners.firstapp&quot;&gt;
+
+    &lt;application
+        android:allowBackup=&quot;true&quot;
+        android:icon=&quot;@mipmap/ic_launcher&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:supportsRtl=&quot;true&quot;
+        android:theme=&quot;@style/AppTheme&quot;
+        android:name=&quot;.MyFirstApplication&quot;&gt;
+				&lt;!-- Here's the first Activity --&gt;
+        &lt;activity
+            android:name=&quot;.MainActivity&quot;
+            android:label=&quot;Welcome to the First App!&quot;
+            android:theme=&quot;@style/AppTheme.NoActionBar&quot;&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+        &lt;activity
+            android:name=&quot;.PaintingListActivity&quot;
+            android:label=&quot;Paintings (List)&quot;
+            android:parentActivityName=&quot;.MainActivity&quot;&gt;
+        &lt;/activity&gt;
+        &lt;activity
+            android:name=&quot;.PaintingDetailActivity&quot;
+            android:parentActivityName=&quot;.MainActivity&quot;&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+&lt;/manifest&gt;
+</code></pre>
+					</section>
+					<section>
+					  <h2>Activity</h2>
+					  <p class="left-align">Let's take a look at our MainActivity.</p>
+						<img src="img/anatomy-as-activity.png"/>
+						<p  class="left-align" style="margin-top:20px;"><small class="green">
+						  HINT: The name MainActivity can be anything you want. It's only by convention that the name has "Activity" in it. The only requirement is that the class extends Activity.
+						</small></p>
+					</section>
+					<section>
+					  <h2>MainActivity</h2>
+					  <p class="left-align">Inside an Activity class you again see an onCreate method. This is often where you set up what is displayed on the screen.</p>
+						<pre><code contenteditable class="java">public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Hello, Test!", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_camera) {
+            // Handle the camera action
+        } else if (id == R.id.nav_list) {
+            Intent listIntent = new Intent(this, PaintingListActivity.class);
+            startActivity(listIntent);
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+}
+</code></pre>
+					</section>
+					<section>
+						<h2>MainActivity</h2>
+						<p class="left-align">There will also be methods for any of the actions that can be taken with the views (buttons, toggles, menus, etc.) on the screen.</p>
+						<pre><code contenteditable class="java">@Override
+public void onBackPressed() {
+	DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+	if (drawer.isDrawerOpen(GravityCompat.START)) {
+		drawer.closeDrawer(GravityCompat.START);
+	} else {
+		super.onBackPressed();
+	}
+}
+
+@Override
+public boolean onNavigationItemSelected(MenuItem item) {
+	int id = item.getItemId();
+
+	if (id == R.id.nav_camera) {
+
+	} else if (id == R.id.nav_list) {
+		Intent listIntent = new Intent(this, PaintingListActivity.class);
+		startActivity(listIntent);
+	}
+
+	DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+	drawer.closeDrawer(GravityCompat.START);
+	return true;
+}
+</code></pre>
 					</section>
 					<section>
 						<h2>Intent</h2>
-						<p></p>
+						<p class="left-align">Now we can talk about how you navigate between Activities: <a href="https://developer.android.com/reference/android/content/Intent.html">Intents</a>!</p>
 					</section>
 					<section>
-						<h2>Navigation</h2>
-						<p>That's it, time to go back up.</p>
+						<h2>Intent</h2>
+						<p class="left-align">Navigating between Activities is done with the use of Intents, like this:</p>
+						<pre><code contenteditable class="java">Intent listIntent = new Intent(this, PaintingListActivity.class);
+startActivity(listIntent);
+</code></pre>
+						<p class="left-align">An Intent is a message to the Android operating system that we'd like to start the Activity named in the Intent.</p>
+						<p  class="left-align"class="left-align" style="margin-top:20px;"><small class="green">
+					  	HINT: Intents can only be created with a "context", which for us means an Activity. The startActivity method is defined for us in the Activity base class that we extend.
+						</small></p>
+						<aside class="notes">
+						  Here is an intent being created from inside a method on my MainActivity (so this refers to the current MainActivity instance). When this code is executed a new PaintingListActivity will be created and presented to the user.
+						</aside>
+					</section>
+					<section>
+						<h2>Intent</h2>
+						<p class="left-align">Intents are useful for more than switching between screens: they are the way to perform all sorts of actions in Android, from viewing contacts, to making calls, getting files from the phone, and so much more.</p>
+						<p class="left-align">Here are some <a href="https://developer.android.com/guide/components/intents-common.html">common intents</a>.</p>
+					</section>
+					<section>
+					  <h2>Email Intent</h2>
+					  <p class="left-align">Here's an example of a method that creates an intent to send an email</p>
+					  <pre><code contenteditable class="java">public void composeEmail(String[] addresses, String subject) {
+	Intent intent = new Intent(Intent.ACTION_SENDTO);
+	intent.setData(Uri.parse("mailto:")); // only email apps
+	intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+	intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+	if (intent.resolveActivity(getPackageManager()) != null) {
+		startActivity(intent);
+	}
+}</code></pre>
 					</section>
 				</section>
 
 				<section>
-					<h2>Project: Connect the Screens</h2>
-					<p>Head over to Android Studio for our second app.</p>
-				</section>
+					<section>
+						<h2>Project: Connect the Screens</h2>
+						<p>Head over to Android Studio for our second app.</p>
+					</section>
+					<section>
+					  <h2>Project: Connect the Screens</h2>
+					  <p class="left-align">For this project, your goal is to create intents so that each of the menu items in the drawer lead to the correct screens.</p>
+						<p class="left-align">Open MainActivity and find onNavigationItemSelected</p>
+					  <ol class="left-align">
+							<li class="left-align">nav_camera should display the CameraActivity</li>
+					    <li class="left-align">nav_grid should display the PaintingGridActivity</li>
+					    <li class="left-align">nav_near should display the MapActivity</li>
+					    <li class="left-align">nav_share should fire a social share Intent</li>
+							<li class="left-align">nav_send should open an email Intent</li>
+					  </ol>
+					</section>
+			</section>
 
 				<!-- The rest of these are TEMPLATE SLIDES -->
 
 				<section>
 					<h2>Heads Up</h2>
 					<p>This is a work in progress, there's not a lot of real content here yet!</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-        <section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-          <p>P.S. This won't work when running the slides locally unless you run reveal.js runs from a local web server.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<!-- Examples of code slides-->
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>For HTML -- Surround your code pre, then code class "xml".</p>
-<pre><code class="xml">&lt;ul class="demo"&gt;
-  &lt;li&gt;No order here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-				</section>
-
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>We can also make code editable</p>
-<pre><code contenteditable class="xml">&lt;ul class="demo"&gt;
-  &lt;li&gt;No order here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-  &lt;li&gt;Or here&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-				</section>
-
-
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>CSS</p>
-<pre><code contenteditable class ="css">body{
-  background-color: #ffffff;
-}
-</code></pre>
-				</section>
-
-				<section>
-					  <h2>But wait! We teach code</h2>
-					  <p>Javascript</p>
-<pre><code contenteditable class ="javascript">function helloWorld(){
-  var name = 'GDI';
-  alert("Hi, " + name)
-}
-</code></pre>
-				</section>
-
- 				 <section>
- 					  <h2>But wait! We teach code</h2>
- 					  <p>Java</p>
-<pre><code contenteditable class ="java">public void helloWorld(){
-  String name = "GDI";
-  System.out.println("Hi," + name)
-}
-</code></pre>
- 				</section>
-
-
-        <!-- Elements entering one at a time-->
-        <section>
-					<section>
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#/14/1">down</a>.
-						</p>
-						<a href="#/14/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-						<a href="#/14/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
-						<a href="#/14" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<a href="#/14/3" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
-						<a href="#/14/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/14" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview. Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>rvl.io</h2>
-					<p>
-						You know, we are nerds after all and will probably get a kick out of all of this HTML. BUT, if you really don't like writing slides in HTML you can use the online editor <a href="http://www.rvl.io" target="_blank">rvl.io</a>.
-					</p>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-            <a href="?theme=gdicool#/themes">GDI Cool</a> -
-            <a href="?theme=gdilight#/themes">GDI Light</a> -
-            <a href="?theme=gdisunny#/themes">GDI Sunny</a> -
-            <a href="?theme=gdidefault#/themes">Default</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
 				</section>
 
 				<section>
@@ -625,7 +717,6 @@ import java.util.Date;
 						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
 					</blockquote>
 				</section>
-
 
 				<section>
 					<h2>Intergalactic Interconnections</h2>
