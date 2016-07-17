@@ -678,6 +678,18 @@ startActivity(listIntent);
 	}
 }</code></pre>
 					</section>
+					<section>
+					  <h2>Capture Photo Intent</h2>
+					  <p class="left-align">Here's an example of a method that creates an intent to capture a photo with the camera app</p>
+					  <pre><code contenteditable class="java">static final int REQUEST_IMAGE_CAPTURE = 1;
+
+private void dispatchTakePictureIntent() {
+    Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+    if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+    }
+}</code></pre>
+					</section>
 				</section>
 
 				<section>
@@ -690,9 +702,10 @@ startActivity(listIntent);
 					  <p class="left-align">For this project, your goal is to create intents so that each of the menu items in the drawer lead to the correct screens.</p>
 						<p class="left-align">Open MainActivity and find onNavigationItemSelected</p>
 					  <ol class="left-align">
-							<li class="left-align">nav_camera should display the CameraActivity</li>
+							<li class="left-align">nav_camera should fire a Capture Photo Intent</li>
+					    <li class="left-align">nav_list should display the PaintingListActivity</li>
 					    <li class="left-align">nav_grid should display the PaintingGridActivity</li>
-					    <li class="left-align">nav_near should display the MapActivity</li>
+							<li class="left-align">nav_web should take you to this website</li>
 					    <li class="left-align">nav_share should fire a social share Intent</li>
 							<li class="left-align">nav_send should open an email Intent</li>
 					  </ol>
