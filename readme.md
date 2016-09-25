@@ -12,7 +12,7 @@ I think it is just as important to build things from scratch as it is to underst
 
 **Cost:** TBA
 
-**Dates:** TBA 2016
+**Dates:** November 11-12 2016
 
 **Location:** TBA in Philadelphia, PA
 
@@ -43,11 +43,8 @@ and have a basic knowledge of source control with git for cloning repos, making 
  - Building your first app on your first day
  - Anatomy of an app
  - APIs and authentication
- - Chat and messaging
- - Maps and location
  - Cameras and photos
- - Publishing to the play store
 
 ### Instructor:
 
-[Audrey Troutt](http://audreytroutt.com/) is the director of mobile development at [SnipSnap](http://snipsnap.it) in Philadelphia, PA. Previously Audrey lead Android and iOS SDK development at Artisan Mobile in Philadelphia. In addition to being a polyglot programmer and full-stack developer with seven years experience, Audrey is passionate about clean code, beautiful apps, automation and vibrant communities.
+[Audrey Troutt](http://audreytroutt.com/) is a senior mobile and backend software engineer at [Tune](https://www.tune.com/solutions/tune-marketing-console/) in Philadelphia, PA. Previously Audrey was the Director of Mobile at SnipSnap and, before that, lead Android and iOS SDK development at Artisan Mobile in Philadelphia. In addition to being a polyglot programmer and full-stack developer with seven years experience, Audrey is passionate about clean code, beautiful apps, automation and vibrant communities.
