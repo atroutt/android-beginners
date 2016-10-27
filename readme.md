@@ -10,11 +10,13 @@ This is a practical introduction to app development on Android. You are going to
 
 I think it is just as important to build things from scratch as it is to understand existing code and take things apart. Therefore the coding exercises will be a combination of read and edit, build from pieces, and start from scratch.
 
-**Cost:** TBA
+**Cost:** $100
 
 **Dates:** November 11-12 2016
 
-**Location:** TBA in Philadelphia, PA
+**Location:** Philadelphia, PA
+
+**Sign Up:** http://www.meetup.com/Girl-Develop-It-Philadelphia/events/234942405/
 
 ### Prerequisites:
 
@@ -36,7 +38,7 @@ and have a basic knowledge of source control with git for cloning repos, making 
  - **Nice to have** an Android phone with Android Jellybean (4.1-4.3), KitKat (4.4), Lollipop (5.x), or Marshmallow (6.x)
     - Don't forget a USB cable to connect your device to your laptop
     - [Enable developer options](http://www.androidauthority.com/enable-developer-options-569223/) on your device to be able to connect with your computer
- - A Github account. If you don't already have a github account you can [create one for free](https://github.com/personal)
+ - **Nice to have** A Github account. If you don't already have a github account you can [create one for free](https://github.com/personal)
 
 ### Topics covered:
 
