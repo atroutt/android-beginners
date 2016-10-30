@@ -748,11 +748,112 @@ private void dispatchTakePictureIntent() {
 			<section>
 				<section>
 					<h2>Camera and Photos</h2>
-					<p class="left-align">We already learned how to wire up a photo intent in the second project.</p>
+					<p class="left-align">We already learned how to wire up a photo intent in the second project. There's more fun to be had with images, like editing them</p>
 				</section>
+				<section>
+					<h2>Bitmap</h2>
+					<p class="left-align">On Android, images are loaded into memory as <a href="https://developer.android.com/reference/android/graphics/Bitmap.html">Bitmaps</a></p>
+					<pre><code contenteditable class="java">Bitmap bmp = BitmapFactory.decodeFile(getAndroidBeginnerImageUri().getPath(), null);</code></pre>
+				</section>
+				<section>
+					<h2>Bitmap</h2>
+					<p class="left-align">A bitmap is a representation of the image as a grid of pixels.</p>
+					<img src="img/edit-image-pixels.png"/>
+				</section>
+				<section>
+					<h2>Canvas and Paint</h2>
+					<p class="left-align">You can edit your Bitmap by creating a <a href="https://developer.android.com/reference/android/graphics/Canvas.html">Canvas</a> and some <a href="https://developer.android.com/reference/android/graphics/Paint.html">Paint</a>.</p>
+					<p class="left-align">Just like good old MS Paint you can switch colors and draw different shapes, all with code!</p>
+					<pre><code contenteditable class="java">Bitmap bitmap = Bitmap.createBitmap(300, 300, null);
+Canvas canvas = new Canvas(bitmap);
+Paint paint = new Paint();
+paint.setColor(Color.WHITE);
+canvas.drawCircle(150, 150, 50, paint);</code></pre>
+				</section>
+				<section>
+					<h2>Paint Coordinates</h2>
+					<p class="left-align">The pixels are numbered by their x and y coordinates on the grid. With 0,0 at the top left.</p>
+					<p class="left-align">X increases as you move to the right and Y increases as you move to the bottom.</p>
+					<img src="img/edit-image-bitmap-coordinates.png"/>
+				</section>
+				<section>
+					<h2>Paint Coordinates</h2>
+					<p class="left-align">Most shapes are drawn from the top left, but when drawing text on a bitmap by default text is drawn from the bottom left of the text (not the top left!).</p>
+					<img src="img/edit-image-bitmap-coordinates-text.png"/>
+					<p  class="left-align" style="margin-top:20px;"><small class="green">
+					  HINT: The bottom of the text is known as the baseline of the text. The tails of letters like y and g hang down below the baseline, so make room for them when placing your text.
+					</small></p>
+				</section>
+			</section>
+			<section>
 				<section>
 					<h2>Project: Image Editing</h2>
 					<p class="left-align">For this project, your goal is to update the snapped photo to add the words "Android Developer" on top.</p>
+				</section>
+				<section>
+				  <h2>MainActivity</h2>
+				  <p class="left-align">In MainActivity look for the method editImage and your TODO comment there</p>
+				  <pre><code contenteditable class="java">private void editImage() {
+	if (!isStoragePermissionGranted()) {
+	    requestWriteExternalStoragePermission();
+	}
+
+	// Load the image into memory from the file
+	Bitmap bmp = BitmapFactory.decodeFile(getAndroidBeginnerImageUri().getPath(), null);
+
+	// Square up the image from the camera
+	int croppedImageSize = (int)Math.min(bmp.getWidth(), bmp.getHeight());
+	Bitmap cropped = centerCropBitmapToSquareSize(bmp, croppedImageSize);
+
+	// TODO Project 4: Draw text on the cropped image
+
+	// Finally, save the edited image back to the file
+	saveBitmapToFile(cropped);
+}
+				  </code></pre>
+				</section>
+				<section>
+				  <h2>Canvas and Paint</h2>
+				  <p class="left-align">Create a Canvas from your bitmap--this is how you can "paint" on your image. Create a Paint object too!</p>
+				  <pre><code contenteditable class="java">Canvas canvas = new Canvas(cropped);
+Paint paint = new Paint();</code></pre>
+				</section>
+				<section>
+				  <h2>Configure your Paint</h2>
+				  <p class="left-align">Set the size and color of the text that we want to write on the image</p>
+				  <pre><code contenteditable class="java">// I want the text to be about 1/10 as tall as the image
+final int textSize = croppedImageSize / 10;
+paint.setTextSize(textSize);
+paint.setColor(ResourcesCompat.getColor(getResources(), R.color.colorPrimaryDark, null));</code></pre>
+				</section>
+				<section>
+				  <h2>Calculate text position</h2>
+				  <p class="left-align">You will need to tell your Paint where to draw the text on the image in terms of X and Y position.</p>
+					<p class="left-align">X is the horizontal position of the text, relative to the left side. Y is the vertical position of the text, measured as how far the BOTTOM of the text is from the top of the image.</p>
+				  <pre><code contenteditable class="java">// it works out to start the text about 1/10 of the way into the image from the left, which is the same as our text size.
+final int textXPosition = textSize;
+// I want the text to be a little above the bottom of the image
+final int textYPosition = croppedImageSize - (textSize / 2);</code></pre>
+				</section>
+				<section>
+				  <h2>Draw the text!</h2>
+				  <p class="left-align">Now that your paint and variables are configured you can draw the text to your canvas! Drawing on the canvas updates the image.</p>
+				  <pre><code contenteditable class="java">final String label = getString(R.string.android_developer_image_label);
+canvas.drawText(label, textXPosition, textYPosition, paint);</code></pre>
+					<p  class="left-align" style="margin-top:20px;"><small class="green">
+					  HINT: if you want the text to stand out a little more, try adding a shadow layer to your Paint BEFORE you draw the text. Check out <a href="https://developer.android.com/reference/android/graphics/Paint.html#setShadowLayer(float, float, float, int)">paint.setShadowLayer(...)</a>
+					</small></p>
+				</section>
+				<section>
+				  <h2>Save the edited image</h2>
+				  <p class="left-align">Make sure that the call to save the edited bitmap is AFTER you are done painting on your canvas so that your changes will be there the next time you run the app.</p>
+				  <pre><code contenteditable class="java">// Save the edited image back to the file
+saveBitmapToFile(cropped);</code></pre>
+				</section>
+				<section>
+				  <h2>Success!</h2>
+				  <p class="left-align">The next time you snap an image you should see your text added on top. Share that with your friends!</p>
+					<img src="img/edit-image-project-end.png"/>
 				</section>
 			</section>
 

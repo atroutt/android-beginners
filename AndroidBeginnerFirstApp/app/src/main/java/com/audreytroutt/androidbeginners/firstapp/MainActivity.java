@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Build;
@@ -331,25 +332,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Bitmap bmp = BitmapFactory.decodeFile(getAndroidBeginnerImageUri().getPath(), null);
 
         // Square up the image from the camera
-        int minDimension = (int)Math.min(bmp.getWidth(), bmp.getHeight());
-        int cropWidthX = (int)Math.max(0, (int)(bmp.getWidth() / 2) - (int)(minDimension / 2));
-        int cropHeightY = (int)Math.max(0, (int)(bmp.getHeight() / 2) - (int)(minDimension / 2));
-        Bitmap cropped = Bitmap.createBitmap(bmp, cropWidthX, cropHeightY, minDimension, minDimension);
+        int croppedImageSize = (int)Math.min(bmp.getWidth(), bmp.getHeight());
+        Bitmap cropped = centerCropBitmapToSquareSize(bmp, croppedImageSize);
 
-        // TODO Draw text on the cropped image
-        Canvas canvas = new Canvas(cropped);
-        Paint paint = new Paint();
-        paint.setColor(ResourcesCompat.getColor(getResources(), R.color.colorPrimaryDark, null));
-        final int textSize = minDimension / 10; // I want the text to be about 1/10 as tall as the image
-        paint.setTextSize(textSize);
-        // X is the horizontal position of the text, relative to the left side
-        final int textXPosition = textSize; // it works out to start the text about 1/10 of the way into the image
-        // Y is the vertical position of the text, measured as how far the BOTTOM of the text is from the top of the image.
-        final int textYPosition = minDimension - (textSize / 2); // I want the text to be a little above the bottom of the image
-        canvas.drawText(getString(R.string.android_developer_image_label), textXPosition, textYPosition, paint);
+        // TODO Project 4: Draw text on the cropped image
 
-        // Save the edited image back to the file
+
+        // Finally, save the edited image back to the file
         saveBitmapToFile(cropped);
+    }
+
+    private Bitmap centerCropBitmapToSquareSize(Bitmap bmp, int cropSize) {
+        int cropStartX = (int)Math.max(0, (int)(bmp.getWidth() / 2) - (int)(cropSize / 2));
+        int cropStartY = (int)Math.max(0, (int)(bmp.getHeight() / 2) - (int)(cropSize / 2));
+        return Bitmap.createBitmap(bmp, cropStartX, cropStartY, cropSize, cropSize);
     }
 
     private void saveBitmapToFile(Bitmap bitmap) {
