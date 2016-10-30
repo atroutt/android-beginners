@@ -1,6 +1,6 @@
 # Android Beginners First App
 
-This is the source for app used in the [Android Beginners @ Girl Develop It Philly](http://atroutt.github.io/android-beginners) class.
+This is the source for app used in the class. A completed version of the app can be found at [https://github.com/atroutt/AndroidBeginnerFirstApp](https://github.com/atroutt/AndroidBeginnerFirstApp)
 
 # Running the App
 
