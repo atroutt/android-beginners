@@ -12,7 +12,7 @@ I think it is just as important to build things from scratch as it is to underst
 
 **Cost:** $100
 
-**Dates:** November 11-12 2016
+**Dates:** Saturday and Sunday, November 11-12, 2016 from 9:00 AM to 4:30 PM both days.
 
 **Location:** Philadelphia, PA
 
