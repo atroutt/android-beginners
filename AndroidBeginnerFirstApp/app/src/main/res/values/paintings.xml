@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="paintings">
+        <item>@drawable/adam</item>
+        <item>@drawable/american_gothic</item>
+        <item>@drawable/kahlo</item> <!--kahlo-->
+        <item>@drawable/popova_pianist</item> <!--popova-->
+        <item>@drawable/bal_du_moulin_de_la_galette</item>
+        <item>@drawable/boticelli_birth_of_venus</item>
+        <item>@drawable/ceci_nest_pas_une_pipe</item>
+        <item>@drawable/mondrian_broadway</item>
+        <item>@drawable/dali_time</item>
+        <item>@drawable/dance_me_to_the_end</item>
+        <item>@drawable/frederick_leighton_flaming_june</item>
+        <item>@drawable/girl_with_pearl_earring</item>
+        <item>@drawable/great_wave_off_kanagawa</item>
+        <item>@drawable/his_station_and_four_aces_coolidge</item>
+        <item>@drawable/klimt_kiss</item>
+        <item>@drawable/monet</item>
+        <item>@drawable/picasso_guernica</item>
+        <item>@drawable/raphael_school_of_athens</item>
+        <item>@drawable/scream</item>
+        <item>@drawable/seurat_park</item>
+        <item>@drawable/the_son_of_man</item>
+        <item>@drawable/okeefe_rams_head</item>
+        <item>@drawable/van_gogh_starry_night</item>
+        <item>@drawable/warhal_marilyn</item>
+        <item>@drawable/whistler</item>
+    </array>
+    <array name="painting_titles">
+        <item>The Creation of Adam</item> <!--Adam-->
+        <item>American Gothic</item> <!--american-gothic-->
+        <item>Self-Portrait with Thorn Necklace and Hummingbird</item> <!--kahlo-->
+        <item>The Pianist</item> <!--popova-->
+        <item>Bal du moulin de la Galette</item> <!--bal-du-moulin-de-la-galette-->
+        <item>The Birth of Venus</item> <!--boticelli-birth-of-venus-->
+        <item>The Treachery of Images</item> <!--ceci-nest-pas-une-pipe-->
+        <item>Broadway Boogie-Woogie</item> <!--mondrian-->
+        <item>The Persistence of Memory</item> <!--dali-time-->
+        <item>The Singing Butler</item> <!--dance-me-to-the-end-->
+        <item>Flaming June</item> <!--frederick-leighton-flaming-june-->
+        <item>Girl with a Pearl Earring</item> <!--girl-with-pearl-earring-->
+        <item>The Great Wave off Kanagawa</item> <!--great-wave-off-kanagawa-->
+        <item>His Station and Four Aces</item> <!--his-station-and-four-aces-coolidge-->
+        <item>The Kiss</item> <!--klimt-kiss-->
+        <item>Impression, Sunrise</item> <!--monet-->
+        <item>Guernica</item> <!--picasso-guernica-->
+        <item>The School of Athens</item> <!--raphael-school-of-athens-->
+        <item>The Scream</item> <!--scream-->
+        <item>A Sunday Afternoon on the Island of La Grande Jatte</item> <!--seurat-park-->
+        <item>The Son of Man</item> <!--the-son-of-man-->
+        <item>Ram\'s Head, White Hollyhock-Hills</item> <!--okeefe-rams-head-->
+        <item>The Starry Night</item> <!--van-gogh-starry-night-->
+        <item>Marilyn Monroe</item> <!--warhal-marilyn-->
+        <item>Arrangement in Grey and Black No.1</item> <!--whistler-->
+    </array>
+    <array name="painting_artists">
+        <item>Michaelangelo</item> <!--Adam-->
+        <item>Grant Wood</item> <!--american-gothic-->
+        <item>Frida Kahlo</item> <!--kahlo-->
+        <item>Lyubov Sergeyevna Popova</item> <!--popova-->
+        <item>Pierre-Auguste Renoir</item> <!--bal-du-moulin-de-la-galette-->
+        <item>Sandro Botticelli</item> <!--boticelli-birth-of-venus-->
+        <item>René Magritte</item> <!--ceci-nest-pas-une-pipe-->
+        <item>Piet Mondrian</item> <!--mondrian-->
+        <item>Salvador Dalí</item> <!--dali-time-->
+        <item>Jack Vettriano</item> <!--dance-me-to-the-end-->
+        <item>Sir Frederic Leighton</item> <!--frederick-leighton-flaming-june-->
+        <item>Johannes Vermeer</item> <!--girl-with-pearl-earring-->
+        <item>Hokusai</item> <!--great-wave-off-kanagawa-->
+        <item>C. M. Coolidge</item> <!--his-station-and-four-aces-coolidge-->
+        <item>Gustav Klimt</item> <!--klimt-kiss-->
+        <item>Claude Monet</item> <!--monet-->
+        <item>Pablo Picasso</item> <!--picasso-guernica-->
+        <item>Raphael</item> <!--raphael-school-of-athens-->
+        <item>Edvard Munch</item> <!--scream-->
+        <item>Georges Seurat</item> <!--seurat-park-->
+        <item>René Magritte</item> <!--the-son-of-man-->
+        <item>Georgia O\'Keeffe</item> <!--okeefe-rams-head-->
+        <item>Vincent van Gogh</item> <!--van-gogh-starry-night-->
+        <item>Andy Warhol</item> <!--warhal-marilyn-->
+        <item>James McNeill Whistler</item> <!--whistler-->
+    </array>
+    <array name="painting_descriptions">
+        <item>The Creation of Adam is a fresco painting by Michelangelo, which forms part of the Sistine Chapel\'s ceiling, painted c. 1511–1512. It illustrates the Biblical creation narrative from the Book of Genesis in which God breathes life into Adam, the first man.</item> <!--Adam-->
+        <item>American Gothic is a painting by Grant Wood in the collection of the Art Institute of Chicago. Wood\'s inspiration came from what is now known as the American Gothic House, and his decision to paint the house along with "the kind of people I fancied should live in that house." The painting shows a farmer standing beside a woman that has been interpreted to be either his wife or his daughter. The figures were modeled by Wood\'s sister, Nan Wood Graham, and Wood and Graham\'s dentist. The woman is dressed in a colonial print apron evoking 19th-century Americana, and the man is holding a pitchfork. The plants on the porch of the house are mother-in-law\'s tongue and geranium, which are the same plants as in Wood\'s 1929 portrait of his mother, Woman with Plants.</item> <!--american-gothic-->
+        <item>Self-Portrait with Thorn Necklace and Hummingbird is a 1940 painting by Mexican painter Frida Kahlo. Kahlo painted the self-portrait after her divorce from Diego Rivera and the end of her affair with photographer Nickolas Muray. The painting depicts Kahlo wearing a white dress with a monkey on her right shoulder and a cat on her left, wearing a necklace made of thorns and a dead hummingbird. The thorns dig into Kahlo\'s skin, making her bleed.</item> <!--kahlo-->
+        <item>Lyubov Sergeyevna Popova was a Russian avant-garde artist (Cubist, Suprematist and Constructivist), painter and designer.  In this grand composition, the artist combines the influences of Cubism and Futurism in a complex and dynamic fragmentation of the human figure. She demonstrates great confidence by tackling a major, large composition based on an abstract pattern of intersecting curved and rectilinear planes.</item> <!--popova-->
+        <item>Bal du moulin de la Galette (commonly known as Dance at Le moulin de la Galette) is an 1876 painting by French artist Pierre-Auguste Renoir. It is housed at the Musée d\'Orsay in Paris and is one of Impressionism\'s most celebrated masterpieces. The painting depicts a typical Sunday afternoon at Moulin de la Galette in the district of Montmartre in Paris. In the late 19th century, working class Parisians would dress up and spend time there dancing, drinking, and eating galettes into the evening.</item> <!--bal-du-moulin-de-la-galette-->
+        <item>The Birth of Venus is a painting by Sandro Botticelli generally thought to have been painted in the mid 1480s. It has long been suggested that Botticelli was commissioned to paint the work by the Medici family of Florence, specifically Lorenzo di Pierfrancesco de\' Medici under the influence of his cousin Lorenzo de\' Medici, close patron to Botticelli. However, there are no documents associated with the painting, and its first identification with the Medici family only comes in the 1550 edition of Vasari\'s Lives. It depicts the goddess Venus, having emerged from the sea as an adult woman, arriving at the shore (which is related to the Venus Anadyomene motif). The painting is on display at the Uffizi Gallery in Florence, Italy.</item> <!--boticelli-birth-of-venus-->
+        <item>The Treachery of Images, 1928–29, sometimes translated as The Treason of Images) is a painting by the Belgian surrealist painter René Magritte.</item> <!--ceci-nest-pas-une-pipe-->
+        <item>Broadway Boogie-Woogie is a painting by Piet Mondrian completed in 1943, shortly after he moved to New York in 1940. Compared to his earlier work, the canvas is divided into a much larger number of squares. Although he spent most of his career creating abstract work, this painting is inspired by clear real-world examples: the city grid of Manhattan, and the Broadway boogie woogie music to which Mondrian loved to dance.</item> <!--mondrian-->
+        <item>The Persistence of Memory is a 1931 painting by artist Salvador Dalí, and is one of his most recognizable works. First shown at the Julien Levy Gallery in 1932, since 1934 the painting has been in the collection of the Museum of Modern Art (MoMA) in New York City, which received it from an anonymous donor. It is widely recognized and frequently referenced in popular culture,[1] and sometimes referred to by more descriptive (though incorrect) titles, such as \'The Soft Watches\' or \'The Melting Watches\'.</item> <!--dali-time-->
+        <item>The Singing Butler is an oil-on-canvas painting made by Scottish artist Jack Vettriano in 1992. It sold at auction in 2004 for £744,800, which was the record at the time for any Scottish painting, and for any painting ever sold in Scotland.</item> <!--dance-me-to-the-end-->
+        <item>Flaming June is a painting by Sir Frederic Leighton, produced in 1895. Painted with oil paints on a 47-by-47-inch (1,200 mm × 1,200 mm) square canvas, it is widely considered to be Leighton\'s magnum opus, showing his classicist nature. It is thought that the woman portrayed alludes to the figures of sleeping nymphs and naiads the Greeks often sculpted. The toxic oleander branch in the top right symbolizes the fragile link between sleep and death.</item> <!--frederick-leighton-flaming-june-->
+        <item>Girl with a Pearl Earring is an oil painting by 17th-century Dutch painter Johannes Vermeer. It is a tronie of a girl with a headscarf and a pearl earring. The painting has been in the collection of the Mauritshuis in The Hague since 1902.</item> <!--girl-with-pearl-earring-->
+        <item>The Great Wave off Kanagawa, also known as The Great Wave or simply The Wave, is a woodblock print by the Japanese ukiyo-e artist Hokusai. It was published sometime between 1830 and 1833 in the late Edo period as the first print in Hokusai\'s series Thirty-six Views of Mount Fuji. It is Hokusai\'s most famous work, and one of the best recognized works of Japanese art in the world. It depicts an enormous wave threatening boats off the coast of the prefecture of Kanagawa.</item> <!--great-wave-off-kanagawa-->
+        <item>Dogs Playing Poker refers collectively to a series of sixteen oil paintings by C. M. Coolidge, commissioned in 1903 by Brown and Bigelow to advertise cigars. All the paintings in the series feature anthropomorphized dogs, but the nine in which dogs are seated around a card table have become well known in the United States as examples of mainly working-class taste in home decoration.</item> <!--his-station-and-four-aces-coolidge-->
+        <item>The Kiss (Lovers) was painted by the Austrian Symbolist painter Gustav Klimt between 1907 and 1908, the highpoint of his "Golden Period", when he painted a number of works in a similar gilded style. A perfect square, the canvas depicts a couple embracing, their bodies entwined in elaborate robes decorated in a style influenced by both linear constructs of the contemporary Art Nouveau style and the organic forms of the earlier Arts and Crafts movement. The work is composed of oil paint with applied layers of gold leaf, an aspect that gives it its strikingly modern, yet evocative appearance.</item> <!--klimt-kiss-->
+        <item>Impression, Sunrise is a painting by Claude Monet. Shown at what would later be known as the "Exhibition of the Impressionists" in April 1874, the painting is attributed to giving rise to the name of the Impressionist movement. Impression, Sunrise depicts the port of Le Havre, Monet\'s hometown, and is his most famous painting of the harbor.</item> <!--monet-->
+        <item>Guernica is a mural-sized oil painting on canvas by Spanish artist Pablo Picasso completed by June 1937. The painting, which uses a palette of gray, black, and white, is regarded by many art critics as one of the most moving and powerful anti-war paintings in history. Standing at 3.49 metres (11 ft 5 in) tall and 7.76 metres (25 ft 6 in) wide, the large mural shows the suffering of people, animals, and buildings wrenched by violence and chaos. The painting is believed to be a response to the bombing of Guernica, a Basque Country village in northern Spain, by German and Italian warplanes at the request of the Spanish Nationalists. Upon completion, Guernica was displayed around the world in a brief tour, becoming famous and widely acclaimed, and believed to have helped bring worldwide attention to the Spanish Civil War.</item> <!--picasso-guernica-->
+        <item>The School of Athens is one of the most famous frescoes by the Italian Renaissance artist Raphael. It was painted between 1509 and 1511 as a part of Raphael\'s commission to decorate the rooms now known as the Stanze di Raffaello, in the Apostolic Palace in the Vatican. The Stanza della Segnatura was the first of the rooms to be decorated, and The School of Athens, representing Philosophy, was probably the second painting to be finished there, after La Disputa (Theology) on the opposite wall, and the Parnassus (Literature). The picture has long been seen as "Raphael\'s masterpiece and the perfect embodiment of the classical spirit of the Renaissance".</item> <!--raphael-school-of-athens-->
+        <item>The Scream is the popular name given to each of four versions of a composition, created as both paintings and pastels, by the Expressionist artist Edvard Munch between 1893 and 1910. The German title Munch gave these works is Der Schrei der Natur (The Scream of Nature). The works show a figure with an agonized expression against a landscape with a tumultuous orange sky. Arthur Lubow has described The Scream as "an icon of modern art, a Mona Lisa for our time."</item> <!--scream-->
+        <item>A Sunday Afternoon on the Island of La Grande Jatte – 1884 is one of Georges Seurat\'s most famous works, and is an example of pointillism.</item> <!--seurat-park-->
+        <item>The Son of Man is a 1946 painting by the Belgian surrealist painter René Magritte. Magritte painted it as a self-portrait. The painting consists of a man in an overcoat and a bowler hat standing in front of a low wall, beyond which is the sea and a cloudy sky. The man\'s face is largely obscured by a hovering green apple. However, the man\'s eyes can be seen peeking over the edge of the apple. Another subtle feature is that the man\'s left arm appears to bend backwards at the elbow.</item> <!--the-son-of-man-->
+        <item>Georgia O\'Keeffe filled her landscapes of the desert Southwest with an abundance of horns and antlers. This painting features an enlarged ram’s skull and antlers hovering emblematically over landscape and sky; the organic lines and complex orifices of these nearly abstract forms conjure associations both phallic and feminine. Sexuality was a complicated issue for O’Keeffe. She famously denied that her landscapes or flower paintings were allegories of the female form, yet their lineage is obviously physical. In both cases, she asserted her own vision of the female body—camouflaged with protective layers of meaning.</item> <!--okeefe-rams-head-->
+        <item>The Starry Night is an oil on canvas by the Dutch post-impressionist painter Vincent van Gogh. Painted in June 1889, it depicts the view from the east-facing window of his asylum room at Saint-Rémy-de-Provence, just before sunrise, with the addition of an idealized village.</item> <!--van-gogh-starry-night-->
+        <item>Andy Warhol (1928-1987) was a key figure in Pop Art, an art movement that emerged in America and elsewhere in the 1950s to become prominent over the next two decades. Warhol was fascinated with morbid concepts. Sometimes, however, the results are astonishingly beautiful, such as the resonating, brilliantly colored images of Marilyn Monroe. The Marilyn canvases were early examples of Warhol’s use of silkscreen printing, a method the artist experimented with.</item> <!--warhal-marilyn-->
+        <item>Arrangement in Grey and Black No.1, best known under its colloquial name Whistler\'s Mother, is a painting in oils on canvas created by the American-born painter James McNeill Whistler in 1871. The painting is 56.81 by 63.94 inches (144.3 cm × 162.4 cm), displayed in a frame of Whistler\'s own design. It is exhibited in and held by the Musée d\'Orsay in Paris, having been bought by the French state in 1891. It is one of the most famous works by an American artist outside the United States. It has been variously described as an American icon and a Victorian Mona Lisa.</item> <!--whistler-->
+    </array>
+    <array name="painting_years">
+        <item>1512</item> <!--Adam-->
+        <item>1930</item> <!--american-gothic-->
+        <item>1940</item> <!--kahlo-->
+        <item>1915</item> <!--popova-->
+        <item>1876</item> <!--bal-du-moulin-de-la-galette-->
+        <item>1480</item> <!--boticelli-birth-of-venus-->
+        <item>1929</item> <!--ceci-nest-pas-une-pipe-->
+        <item>1943</item> <!--mondrian-->
+        <item>1931</item> <!--dali-time-->
+        <item>1992</item> <!--dance-me-to-the-end-->
+        <item>1895</item> <!--frederick-leighton-flaming-june-->
+        <item>1665</item> <!--girl-with-pearl-earring-->
+        <item>1832</item> <!--great-wave-off-kanagawa-->
+        <item>1903</item> <!--his-station-and-four-aces-coolidge-->
+        <item>1908</item> <!--klimt-kiss-->
+        <item>1872</item> <!--monet-->
+        <item>1937</item> <!--picasso-guernica-->
+        <item>1511</item> <!--raphael-school-of-athens-->
+        <item>1893</item> <!--scream-->
+        <item>1886</item> <!--seurat-park-->
+        <item>1946</item> <!--the-son-of-man-->
+        <item>1935</item> <!--okeefe-rams-head-->
+        <item>1889</item> <!--van-gogh-starry-night-->
+        <item>1962</item> <!--warhal-marilyn-->
+        <item>1871</item> <!--whistler-->
+    </array>
+</resources>

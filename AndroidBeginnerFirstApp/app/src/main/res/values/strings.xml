@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Android Beginners First App</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_sign_out">Sign Out</string>
+    <string name="main_screen_camera_image_description">This is where you can display your selfie. This same image can be shared with your friends.</string>
+    <string name="android_developer_image_label">Android Developer</string>
+    <string name="main_screen_arrow_image_description">Arrow pointing at the share button</string>
+    <string name="main_screen_instructions">Take a photo of yourself and show the world what an Android Developer looks like!</string>
+    <string name="main_screen_welcom_message_if_image_set">You\'re an Android Developer!</string>
+    <string name="main_screen_welcome_message_if_no_image">Picture yourself as an Android Developer</string>
+    <string name="background_image_description">background image</string>
+    <string name="user_photo_placeholder_image_description">Avatar for current user</string>
+    <string name="user_name_placeholder_text">Android Beginner</string>
+    <string name="user_email_placeholder_text">android.studio@android.com</string>
+    <string name="camera_menu_text">Camera</string>
+    <string name="painting_list_menu_text">Painting List</string>
+    <string name="painting_grid_menu_text">Painting Grid</string>
+    <string name="class_website_menu_text">Class Website</string>
+    <string name="tell_your_friends_menu_text">Tell Your Friends</string>
+    <string name="send_email_menu_text">Email</string>
+    <string name="communication_menu_header">Communication</string>
+    <string name="image_of_painting_image_description">Image of painting</string>
+    <string name="image_of_painting_being_discussed_image_description">Image of painting being discussed</string>
+
+    <!-- Strings related to login -->
+    <string name="title_activity_login">Who are you?</string>
+    <string name="welcome_on_login">Welcome, %1$s! Let\'s get started...</string>
+    <string name="action_delete_photo">Delete Photo</string>
+
+</resources>

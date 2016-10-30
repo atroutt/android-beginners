@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.audreytroutt.androidbeginners.firstapp.PaintingDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top">
+
+        <ImageView
+            android:id="@+id/pd_image"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/image_of_painting_being_discussed_image_description"
+            android:src="@drawable/kahlo"/>
+
+        <TextView
+            android:id="@+id/pd_title_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="@dimen/painting_list_title_text_size"
+            android:layout_below="@id/pd_image"
+            android:layout_margin="@dimen/md_keylines"
+            android:layout_marginBottom="0dp"
+            android:text="@string/app_name"/>
+
+        <TextView
+            android:id="@+id/pd_description"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/painting_list_desc_text_size"
+            android:layout_below="@id/pd_title_year"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/md_keylines"
+            android:layout_marginRight="@dimen/md_keylines"
+            android:layout_marginBottom="@dimen/md_keylines"
+            android:text="@string/app_name"/>
+    </RelativeLayout>
+</ScrollView>
