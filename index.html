@@ -726,8 +726,12 @@ private void dispatchTakePictureIntent() {
 			<section>
 				<section>
 					<h2>APIs and Authentication</h2>
-					<p class="left-align">Most of the code that makes apps work isn't code you write yourself--instead we use 3rd party libraries.</p>
-					<p class="left-align">API stands for Application Program Interface, and it means the classes and methods that you need to use to leverage all this code that other people wrote. You've already learned a lot about the Android APIs when you learned about Application, Activity, and the Intent system.</p>
+					<p class="left-align">Most of the code that makes apps work isn't code you write yourself--instead we use libraries.</p>
+          <p class="left-align">A library will provide an API for implementing the features you need.</p>
+          <p class="left-align">API stands for Application Program Interface, and it means the classes and methods that you need to use to leverage all this code that other people wrote.</p>
+          <aside class="notes">
+            You've already learned a lot about the Android APIs when you learned about Application, Activity, and the Intent system.
+          </aside>
 				</section>
 				<section>
 				  <h2>Dependencies</h2>
@@ -805,6 +809,28 @@ dependencies {
           <h2>Sample Apps</h2>
           <p class="left-align">Sample apps are helpful because you can see a working example of the API.</p>
           <img src="img/auth-sample-app.png"/>
+        </section>
+        <section>
+          <h2>How Authentication Works</h2>
+          <p class="left-align">When we use an authentication service there are typically three steps:</p>
+          <ol>
+            <li>Send request for authentication using API</li>
+            <li>Receive success token or failure response from auth service</li>
+            <li>(Optional) Request additional user info with success token</li>
+          </ol>
+        </section>
+        <section>
+          <h2>How Authentication Works</h2>
+          <img src="img/auth-how-it-works-blog-jachobsen-com.png"/>
+          <p><small>
+            By <a href="http://blog.jachobsen.com/2013/08/10/google-oauth2-in-android-with-rails-backend/">Henrik Jachobsen</a>
+          </small></p>
+        </section>
+        <section>
+          <h2>Firebase</h2>
+          <p class="left-align">Firebase is a service that can do authentication AND store data.</p>
+          <p class="left-align">Rather than forcing your app users to remember a new username and password you can let them log in with Google instead.</p>
+          <p class="left-align">You can authenticate with Google and then use the Google success token to authenticate with Firebase.</p>
         </section>
 			</section>
 			<section>
