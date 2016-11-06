@@ -15,12 +15,12 @@
             android:name=".MainActivity"
             android:label="Android Beginners"
             android:theme="@style/AppTheme.NoActionBar">
-            <!-- UNCOMMENT TO SKIP LOGIN
+
+            <!-- TODO Project 3: Remove this intent when you add the LoginActivity -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
         </activity>
         <activity
             android:name=".PaintingListActivity"
@@ -42,15 +42,6 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".PaintingDetailActivity"></activity>
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/app_name">
-            <!-- REMOVE THIS INTENT FILTER TO SKIP LOGIN -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
