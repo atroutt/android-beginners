@@ -738,9 +738,42 @@ private void dispatchTakePictureIntent() {
 				<section>
 				  <h2>build.gradle</h2>
 				  <p class="left-align">Gradle is both our build tool and our dependency managment system. The build.gradle script gives instructions for how to build the app and which dependencies to download and include.</p>
-					<pre><code contenteditable class="java">
-					CODE
-					</code></pre>
+					<pre><code contenteditable class="java">apply plugin: 'com.android.application'
+
+	android {
+	    compileSdkVersion 24
+	    buildToolsVersion "24.0.3"
+
+	    defaultConfig {
+	        applicationId "com.audreytroutt.androidbeginners.firstapp"
+	        minSdkVersion 16
+	        targetSdkVersion 24
+	        versionCode 1
+	        versionName "1.0"
+	    }
+	    buildTypes {
+	        release {
+	            minifyEnabled false
+	            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+	        }
+	    }
+	}
+
+	dependencies {
+	    compile fileTree(dir: 'libs', include: ['*.jar'])
+	    testCompile 'junit:junit:4.12'
+
+	    // Support libraries
+	    compile 'com.android.support:appcompat-v7:24.2.1'
+	    compile 'com.android.support:design:24.2.1'
+	    compile 'com.android.support:cardview-v7:24.2.1'
+	    compile 'com.android.support:support-v4:24.2.1'
+
+	    // picasso
+	    compile 'com.squareup.picasso:picasso:2.5.2'
+
+	    // TODO Project 3: add the firebase auth dependencies here
+	}</code></pre>
 				</section>
 			</section>
 			<section>
@@ -757,15 +790,16 @@ private void dispatchTakePictureIntent() {
 				<section>
 					<h2>Add Firebase and Google Auth Libraries</h2>
 					<p class="left-align">Add the following dependencies to your app's build.gradle file inside the dependencies{...} section</p>
-					<pre><code>
-// TODO Project 3: add the firebase auth dependencies here
+					<pre><code>dependencies {
+  // ...
 
-compile 'com.google.firebase:firebase-core:9.8.0'
-compile 'com.google.firebase:firebase-auth:9.8.0'
-compile 'com.google.android.gms:play-services-auth:9.8.0'
-					</code></pre>
+  // TODO Project 3: add the firebase auth dependencies here
+  compile 'com.google.firebase:firebase-core:9.8.0'
+  compile 'com.google.firebase:firebase-auth:9.8.0'
+  compile 'com.google.android.gms:play-services-auth:9.8.0'
+}</code></pre>
 					<p  class="left-align" style="margin-top:20px;"><small class="green">
-						HINT: There are two build.gradle files for your project. One is labled "Module" and the other "Project"
+						HINT: There are two build.gradle files for your project. One is labled "Module" and the other "Project". The Module one is the one we want to edit.
 					</small></p>
 				</section>
 				<section>
@@ -775,7 +809,9 @@ compile 'com.google.android.gms:play-services-auth:9.8.0'
 // Add to the bottom of the file outside of dependencies
 apply plugin: 'com.google.gms.google-services'
 					</code></pre>
-					<p class="left-align">Always sync gradle after editing build.gradle. Android Studio will remind you.</p>
+					<p class="left-align" style="margin-top:20px;"><small class="yellow">
+						Always sync gradle after editing build.gradle. Android Studio will remind you.
+					</small></p>
 				</section>
 				<section>
 				  <h2>Create Login Activity</h2>
@@ -784,27 +820,29 @@ apply plugin: 'com.google.gms.google-services'
 				</section>
 				<section>
 				  <h2>Edit your Manifest.xml</h2>
-				  <p class="left-align"></p>
-				  <pre><code contenteditable class="java">&lt;activity
-		android:name=&quot;.MainActivity&quot;
-		android:label=&quot;Android Beginners&quot;
-		android:theme=&quot;@style/AppTheme.NoActionBar&quot;&gt;
+				  <p class="left-align">Remove the launch intent filter from MainActivity.</p>
+				  <pre><code contenteditable class="xml">&lt;activity
+	android:name=&quot;.MainActivity&quot;
+	android:label=&quot;Android Beginners&quot;
+	android:theme=&quot;@style/AppTheme.NoActionBar&quot;&gt;
 
-		&lt;!-- TODO Project 3: Remove this intent when you add the LoginActivity --&gt;
-		&lt;intent-filter&gt;
-				&lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
-				&lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
-		&lt;/intent-filter&gt;
-&lt;/activity&gt;
-
-&lt;!-- TODO Project 3: Check that your LoginActivity looks like this --&gt;
-&lt;activity
-		android:name=&quot;.LoginActivity&quot;
-		android:label=&quot;@string/app_name&quot;&gt;
-		&lt;intent-filter&gt;
-				&lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
-				&lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
-		&lt;/intent-filter&gt;
+	&lt;!-- TODO Project 3: Remove this intent when you add the LoginActivity --&gt;
+	&lt;intent-filter&gt;
+		&lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+		&lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+	&lt;/intent-filter&gt;
+&lt;/activity&gt;</code></pre>
+				</section>
+				<section>
+					<h2>Edit your Manifest.xml</h2>
+					<p class="left-align">Check that your LoginActivity looks like this:</p>
+					<pre><code contenteditable class="xml">&lt;activity
+	android:name=&quot;.LoginActivity&quot;
+	android:label=&quot;@string/app_name&quot;&gt;
+	&lt;intent-filter&gt;
+		&lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+		&lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+	&lt;/intent-filter&gt;
 &lt;/activity&gt;
 </code></pre>
 				</section>
@@ -861,12 +899,12 @@ apply plugin: 'com.google.gms.google-services'
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-	    super.onCreate(savedInstanceState);
-	    setContentView(R.layout.activity_login);
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_login);
 
-			mSignInButton = (SignInButton) findViewById(R.id.sign_in_button);
-			mSignInButton.setSize(SignInButton.SIZE_WIDE);
-			mStatusTextView = (TextView) findViewById(R.id.logged_in_name);
+		mSignInButton = (SignInButton) findViewById(R.id.sign_in_button);
+		mSignInButton.setSize(SignInButton.SIZE_WIDE);
+		mStatusTextView = (TextView) findViewById(R.id.logged_in_name);
 	}
 }</code></pre>
 				</section>
@@ -874,31 +912,33 @@ apply plugin: 'com.google.gms.google-services'
 				  <h2>Set up Google Auth in OnCreate</h2>
 				  <p class="left-align"></p>
 				  <pre><code contenteditable class="java">public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
-// ...
 
-private GoogleApiClient mGoogleApiClient;
+  // ...
 
-@Override
-protected void onCreate(Bundle savedInstanceState) {
+  private GoogleApiClient mGoogleApiClient;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_login);
 
-		// ... other stuff you already set up
+    // ... other stuff you already set up
 
-		// Set up Google Auth and request basic user profile data and email
-		GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-				.requestIdToken(getString(R.string.default_web_client_id))
-				.requestEmail()
-				.build();
-		mGoogleApiClient = new GoogleApiClient.Builder(this)
-				.enableAutoManage(this, this)
-				.addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-				.build();
-}
+    // Set up Google Auth and request basic user profile data and email
+    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        .requestIdToken(getString(R.string.default_web_client_id))
+        .requestEmail()
+        .build();
+    mGoogleApiClient = new GoogleApiClient.Builder(this)
+        .enableAutoManage(this, this)
+        .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+        .build();
+  }
 
-@Override
-public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-		Log.d(TAG, "onConnectionFailed:" + connectionResult.getErrorMessage());
+  @Override
+  public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+    Log.d(TAG, "onConnectionFailed:" + connectionResult.getErrorMessage());
+  }
 }</code></pre>
 				</section>
 				<section>
@@ -911,162 +951,227 @@ private static final String TAG = "LoginActivity";
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_login);
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_login);
 
-		// ... other stuff you already set up
+  // ... other stuff you already set up
 
-		// Set up Firebase Auth
-    mAuth = FirebaseAuth.getInstance();
-    mAuthListener = new FirebaseAuth.AuthStateListener() {
-        @Override
-        public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-            FirebaseUser user = firebaseAuth.getCurrentUser();
-            if (user != null) {
-                // User is signed in
-                Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-            } else {
-                // User is signed out
-                Log.d(TAG, "onAuthStateChanged:signed_out");
-            }
-        }
-    };
+  // Set up Firebase Auth
+  mAuth = FirebaseAuth.getInstance();
+  mAuthListener = new FirebaseAuth.AuthStateListener() {
+    @Override
+    public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+      FirebaseUser user = firebaseAuth.getCurrentUser();
+      if (user != null) {
+        // User is signed in
+        Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+      } else {
+        // User is signed out
+        Log.d(TAG, "onAuthStateChanged:signed_out");
+      }
+    }
+  };
 }</code></pre>
 				</section>
 				<section>
 				  <h2>Add onStart and onStop</h2>
-				  <p class="left-align">We only want to listen for authentication while the login activity is visible, so we are going to start and stop listening for authentication changes onStart and onStop.</p>
+				  <p class="left-align">We only want to listen for authentication while the login activity is visible.</p>
 					<p class="left-align">Add these methods inside your LoginActivity, after onCreate.</p>
 				  <pre><code contenteditable class="java">@Override
 public void onStart() {
-		super.onStart();
-		mAuth.addAuthStateListener(mAuthListener);
+  super.onStart();
+  mAuth.addAuthStateListener(mAuthListener);
 }
 
 @Override
 public void onStop() {
-		super.onStop();
-		if (mAuthListener != null) {
-				mAuth.removeAuthStateListener(mAuthListener);
-		}
+  super.onStop();
+  if (mAuthListener != null) {
+    mAuth.removeAuthStateListener(mAuthListener);
+  }
 }</code></pre>
 				</section>
 				<section>
 				  <h2>Listen for button presses</h2>
-				  <p class="left-align">In order to make the button actually sign you in we need to set up a click listener. We will make our LoginActivity the listener for the sign in button and implement an onClick method, which will be called when the button is pressed.</p>
+				  <p class="left-align">Make Your LoginActivity the listener for the sign in button and implement an onClick method.</p>
 				  <pre><code contenteditable class="java">public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, OnClickListener {
 
-	private static final int RC_SIGN_IN = 111;
+  private static final int RC_SIGN_IN = 111;
+  // ...
 
-	// ...
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    // ...
+    mSignInButton.setOnClickListener(this);
+    // ...
+  }
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-			super.onCreate(savedInstanceState);
-			setContentView(R.layout.activity_login);
-
-			// ...
-
-			mSignInButton = (SignInButton) findViewById(R.id.sign_in_button);
-			mSignInButton.setSize(SignInButton.SIZE_WIDE);
-			// TODO add setOnClickListener
-			mSignInButton.setOnClickListener(this);
-
-			// ...
-	}
-
-	@Override
-	public void onClick(View v) {
-	    if (R.id.sign_in_button == v.getId()) {
-				  // Sign in with google!
-	        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
-	        startActivityForResult(signInIntent, RC_SIGN_IN);
-	    }
-	}
+  @Override
+  public void onClick(View v) {
+    if (R.id.sign_in_button == v.getId()) {
+      Toast.makeText(this, "Sign In Button was pressed", Toast.LENGTH_LONG).show();
+    }
+  }
 }</code></pre>
-				<p class="left-align">It's an intent! This starts a Google Auth activity. Just like the camera intent we need to handle an activity result for when the Google Activity is done.</p>
+				</section>
+				<section>
+				  <h2>Sign In on Button Press</h2>
+					<p class="left-align">Use an intent! This starts a Google Auth activity.</p>
+				  <p class="left-align"></p>
+				  <pre><code contenteditable class="java">@Override
+public void onClick(View v) {
+  if (R.id.sign_in_button == v.getId()) {
+    Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+    startActivityForResult(signInIntent, RC_SIGN_IN);
+  }
+}</code></pre>
 				</section>
 				<section>
 				  <h2>Handle Google Login response</h2>
 				  <p class="left-align">When the Google auth is done it will call back to our LoginActivity onActivityResult method. If successful we want to tell Firebase who you are.</p>
 				  <pre><code contenteditable class="java">@Override
 public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
+  super.onActivityResult(requestCode, resultCode, data);
 
-		// Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-		if (requestCode == RC_SIGN_IN) {
-				GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-				if (result.isSuccess()) {
-						// Google Sign In was successful
-						GoogleSignInAccount account = result.getSignInAccount();
+  // 1. if the result is for our sign in request
+  if (requestCode == RC_SIGN_IN) {
+    GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+    if (result.isSuccess()) {
+      // 2. if Google Sign In was successful, get the Google account
+      GoogleSignInAccount account = result.getSignInAccount();
 
-						// Display the welcome text on the LoginActivity status text view
-						String text = getResources().getString(R.string.welcome_on_login, account.getDisplayName());
-						mStatusTextView.setText(text);
+      // 3. Display the welcome text on the LoginActivity status text view
+      String text = getResources().getString(R.string.welcome_on_login, account.getDisplayName());
+      mStatusTextView.setText(text);
 
-						// Hide the sign in button so that you can't sign in again
-						mSignInButton.setVisibility(View.INVISIBLE);
+      // 4. Hide the sign in button so that you can't sign in again
+      mSignInButton.setVisibility(View.INVISIBLE);
 
-						// Tell Firebase to login with this Google account (this method won't exist until you create it in the next step!)
-						firebaseAuthWithGoogle(account);
-				} else {
-						// Google Sign In failed, update UI appropriately
-						mStatusTextView.setText("");
-				}
-		}
+      // 5. Tell Firebase to login with this Google account (this method won't exist until you create it in the next step!)
+      firebaseAuthWithGoogle(account);
+    } else {
+      // 6. Google Sign In failed, update status message
+      mStatusTextView.setText("Login Failed");
+    }
+  }
 }</code></pre>
 				</section>
 				<section>
-				  <h2>Create method firebaseAuthWithGoogle(final GoogleSignInAccount acct)</h2>
-				  <p class="left-align">Use Android Studio to automatically create the missing method. Add the following implementation for firebaseAuthWithGoogle.</p>
-				  <pre><code contenteditable class="java">private void firebaseAuthWithGoogle(final GoogleSignInAccount acct) {
-		Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
-		AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-		mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-		    @Override
-		    public void onComplete(@NonNull Task<AuthResult> task) {
-		        Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
+				  <h2>Create the missing method</h2>
+				  <p class="left-align">Use Android Studio to automatically create the missing method, firebaseAuthWithGoogle. Add the following implementation:</p>
+				  <pre><code class="java">private void firebaseAuthWithGoogle(final GoogleSignInAccount acct) {
+  Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
+  AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+  mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener&lt;AuthResult&gt;() {
+    @Override
+    public void onComplete(@NonNull Task&lt;AuthResult&gt; task) {
+      Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
 
-		        if (!task.isSuccessful()) {
-		            // Firebase login failed even though Google login was successful
-		            Log.w(TAG, "signInWithCredential", task.getException());
-		            Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-		            mSignInButton.setVisibility(View.VISIBLE);
-		        } else {
-		            // Firebase login successful
-		            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-		            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-		                    .setDisplayName(acct.getDisplayName())
-		                    .setPhotoUri(acct.getPhotoUrl())
-		                    .build();
-		            user.updateProfile(profileUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {
-		                @Override
-		                public void onComplete(@NonNull Task<Void> task) {
-		                    if (task.isSuccessful()) {
-													// We are all done authenticating with Firebase
+      if (!task.isSuccessful()) {
+        // Firebase login failed even though Google login was successful
+        Log.w(TAG, "signInWithCredential", task.getException());
+        Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+        mSignInButton.setVisibility(View.VISIBLE);
+      } else {
+        // Firebase login successful
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+          .setDisplayName(acct.getDisplayName())
+          .setPhotoUri(acct.getPhotoUrl())
+          .build();
+        user.updateProfile(profileUpdates).addOnCompleteListener(new OnCompleteListener&lt;Void&gt;() {
+          @Override
+          public void onComplete(@NonNull Task&lt;Void&gt; task) {
+            if (task.isSuccessful()) {
+              // We are all done authenticating with Firebase
 
-													// TODO show the MainActivity! Do you remember how to create an intent and call startActivity?
-		                    }
-		                }
-		            });
-		        }
-		    }
-		});
+              // TODO show the MainActivity! Do you remember how to create an intent and call startActivity?
+            }
+          }
+        });
+      }
+    }
+  });
 }</code></pre>
 				</section>
 				<section>
 				  <h2>Now you can log in!</h2>
-				  <p class="left-align">Run the app and try logging in with Google!</p>
+				  <p>Run the app and try logging in with Google!</p>
 				</section>
+
+				<!-- BONUS Display user info in the side menu -->
+
 				<section>
-					<h2>Want to do more?</h2>
-					<p class="left-align"> clases for ideas or try these:</p>
-					<ul>
-						<li><a href="">Draw a frame around your face</a></li>
-						<li><a href="">Add a fun filter to your image</a></li>
-						<li><a href="">Draw a little android on your shoulder</a></li>
-					</ul>
+				  <h2>BONUS: Update User In Drawer</h2>
+				  <p class="left-align">In MainActivity find setUserInfoInDrawer and add the following implementation:</p>
+				  <pre><code class="java">private void setUserInfoInDrawer() {
+  // TODO Project 3: Get user info and display it at the top of the drawer
+  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+  if (user != null) {
+    NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+    View headerView = navigationView.getHeaderView(0);
+    TextView currentUserEmail = (TextView) headerView.findViewById(R.id.current_user_email);
+    currentUserEmail.setText(user.getEmail());
+    TextView currentUserName = (TextView) headerView.findViewById(R.id.current_user_name);
+    currentUserName.setText(user.getDisplayName());
+    ImageView currentUserImage = (ImageView) headerView.findViewById(R.id.current_user_photo);
+    Picasso.with(this).load(user.getPhotoUrl()).into(currentUserImage);
+  }
+}</code></pre>
 				</section>
+
+				<!-- BONUS Implement sign out -->
+        <section>
+          <h2>BONUS: Sign Out</h2>
+          <p class="left-align">It's nice to be able to sign out too! We will need to set up a Google API Client in MainActivity.</p>
+          <pre><code class="java">public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener {
+
+  // ...
+
+  private GoogleApiClient mGoogleApiClient;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    // ... other stuff you already set up
+
+    // Set up Google Auth and request basic user profile data and email
+    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        .requestIdToken(getString(R.string.default_web_client_id))
+        .requestEmail()
+        .build();
+    mGoogleApiClient = new GoogleApiClient.Builder(this)
+        .enableAutoManage(this, this)
+        .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+        .build();
+  }
+
+  @Override
+  public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+    Log.d(TAG, "onConnectionFailed:" + connectionResult.getErrorMessage());
+  }
+}</code></pre>
+        </section>
+        <section>
+          <h2>BONUS: Sign Out</h2>
+          <p class="left-align">I've already added a Sign Out menu in the top right of the screen. Find onOptionsItemSelected in MainActivity to implement Sign Out:</p>
+          <pre><code contenteditable class="java">if (id == R.id.action_sign_out) {
+  // TODO Project 3: implement sign out
+  Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(new ResultCallback&lt;Status&gt;() {
+      @Override
+      public void onResult(Status status) {
+        if (status.isSuccess()) {
+          Intent loginScreenIntent = new Intent(MainActivity.this, LoginActivity.class);
+          startActivity(loginScreenIntent);
+        }
+      }
+  });
+  return true;
+}</code></pre>
+        </section>
+
 			</section>
 
 			<!-- 4. Camera and Photos  -->

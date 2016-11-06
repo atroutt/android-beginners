@@ -8,11 +8,7 @@ public class MyFirstApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        // My Application was just created!
-        showToast("MyFirstApplication has been created!");
-    }
-
-    public void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        // You can delete this Toast if you want :)
+        Toast.makeText(this, "MyFirstApplication has been created!", Toast.LENGTH_LONG).show();
     }
 }

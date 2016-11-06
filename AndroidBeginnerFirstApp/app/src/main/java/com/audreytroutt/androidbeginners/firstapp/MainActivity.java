@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,7 +13,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -30,23 +26,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.squareup.picasso.Picasso;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
     private static final String TAG = "MainActivity";
@@ -54,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout mDrawer;
     private Uri androidBeginnerImageUri;
     private FloatingActionButton fab;
-    private GoogleApiClient mGoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,16 +47,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        // Set up Google Auth and request basic user profile data and email
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this, this)
-                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-                .build();
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
 
@@ -106,17 +81,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void setUserInfoInDrawer() {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-            View headerView = navigationView.getHeaderView(0);
-            TextView currentUserEmail = (TextView) headerView.findViewById(R.id.current_user_email);
-            currentUserEmail.setText(user.getEmail());
-            TextView currentUserName = (TextView) headerView.findViewById(R.id.current_user_name);
-            currentUserName.setText(user.getDisplayName());
-            ImageView currentUserImage = (ImageView) headerView.findViewById(R.id.current_user_photo);
-            Picasso.with(this).load(user.getPhotoUrl()).into(currentUserImage);
-        }
+        // TODO Project 3: Get user info and display it at the top of the drawer
     }
 
     @Override
@@ -143,17 +108,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.action_sign_out) {
-            // TODO Implement sign out
-            Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
-                    new ResultCallback<Status>() {
-                        @Override
-                        public void onResult(Status status) {
-                            if (status.isSuccess()) {
-                                Intent loginScreenIntent = new Intent(MainActivity.this, LoginActivity.class);
-                                startActivity(loginScreenIntent);
-                            }
-                        }
-                    });
+            // TODO Project 3: implement sign out
             return true;
         } else if (id == R.id.action_delete_photo) {
             File savedImage = getAndroidBeginnerImageFile();
@@ -179,30 +134,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // TODO create an intent for the MediaStore.ACTION_IMAGE_CAPTURE
+            // TODO Project 2: create an intent for the MediaStore.ACTION_IMAGE_CAPTURE
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, getAndroidBeginnerImageUri()); // set the image file name
             startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
         } else if (id == R.id.nav_list) {
-            // TODO create an intent for the PaintingListActivity
+            // TODO Project 2: create an intent for the PaintingListActivity
             Intent listIntent = new Intent(this, PaintingListActivity.class);
             startActivity(listIntent);
         } else if (id == R.id.nav_grid) {
-            // TODO create an intent for the PaintingGridActivity
+            // TODO Project 2: create an intent for the PaintingGridActivity
             Intent listIntent = new Intent(this, PaintingGridActivity.class);
             startActivity(listIntent);
         } else if (id == R.id.nav_web) {
-            // TODO create an intent to open a url
+            // TODO Project 2: create an intent to open a url
             Uri webpage = Uri.parse("http://audreytroutt.com/android-beginners/");
             Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
             if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
             }
         } else if (id == R.id.nav_share) {
-            // TODO create an intent to social share about this app
+            // TODO Project 2: create an intent to social share about this app
             shareAction();
         } else if (id == R.id.nav_send) {
-            // TODO create an intent to send an email
+            // TODO Project 2: create an intent to send an email
             Intent intent = new Intent(Intent.ACTION_SENDTO);
             intent.setData(Uri.parse("mailto:")); // only email apps should handle this
             intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "gdiandroidbeginners@mailinator.com"});
@@ -235,11 +190,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             editImage();
             updateMainImageFromFile();
         }
-    }
-
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Log.d(TAG, "onConnectionFailed:" + connectionResult.getErrorMessage());
     }
 
     // ----------------------------------
