@@ -740,40 +740,41 @@ private void dispatchTakePictureIntent() {
 				  <p class="left-align">Gradle is both our build tool and our dependency managment system. The build.gradle script gives instructions for how to build the app and which dependencies to download and include.</p>
 					<pre><code contenteditable class="java">apply plugin: 'com.android.application'
 
-	android {
-	    compileSdkVersion 24
-	    buildToolsVersion "24.0.3"
+android {
+  compileSdkVersion 24
+  buildToolsVersion "24.0.3"
 
-	    defaultConfig {
-	        applicationId "com.audreytroutt.androidbeginners.firstapp"
-	        minSdkVersion 16
-	        targetSdkVersion 24
-	        versionCode 1
-	        versionName "1.0"
-	    }
-	    buildTypes {
-	        release {
-	            minifyEnabled false
-	            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-	        }
-	    }
-	}
+  defaultConfig {
+    applicationId "com.audreytroutt.androidbeginners.firstapp"
+    minSdkVersion 16
+    targetSdkVersion 24
+    versionCode 1
+    versionName "1.0"
+  }
+  
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
 
-	dependencies {
-	    compile fileTree(dir: 'libs', include: ['*.jar'])
-	    testCompile 'junit:junit:4.12'
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  testCompile 'junit:junit:4.12'
 
-	    // Support libraries
-	    compile 'com.android.support:appcompat-v7:24.2.1'
-	    compile 'com.android.support:design:24.2.1'
-	    compile 'com.android.support:cardview-v7:24.2.1'
-	    compile 'com.android.support:support-v4:24.2.1'
+  // Support libraries
+  compile 'com.android.support:appcompat-v7:24.2.1'
+  compile 'com.android.support:design:24.2.1'
+  compile 'com.android.support:cardview-v7:24.2.1'
+  compile 'com.android.support:support-v4:24.2.1'
 
-	    // picasso
-	    compile 'com.squareup.picasso:picasso:2.5.2'
+  // picasso
+  compile 'com.squareup.picasso:picasso:2.5.2'
 
-	    // TODO Project 3: add the firebase auth dependencies here
-	}</code></pre>
+  // TODO Project 3: add the firebase auth dependencies here
+}</code></pre>
 				</section>
 			</section>
 			<section>
@@ -785,7 +786,7 @@ private void dispatchTakePictureIntent() {
 				<section>
 					<h2>Authentication</h2>
 					<p class="left-align">Let's add a login screen to our app to learn more about who is using the app.</p>
-					<a href="https://firebase.google.com/docs/auth/android/google-signin">Using Firebase Auth</a>
+          <p class="left-align">Reference: <a href="https://firebase.google.com/docs/auth/android/google-signin">Using Firebase Auth</a></p>
 				</section>
 				<section>
 					<h2>Add Firebase and Google Auth Libraries</h2>
@@ -805,12 +806,10 @@ private void dispatchTakePictureIntent() {
 				<section>
 					<h2>Add Firebase and Google Auth Libraries</h2>
 					<p class="left-align">Add the following line to your app's build.gradle file outside the dependencies{...} section at the bottom of the file.</p>
-					<pre><code>
-// Add to the bottom of the file outside of dependencies
-apply plugin: 'com.google.gms.google-services'
-					</code></pre>
-					<p class="left-align" style="margin-top:20px;"><small class="yellow">
-						Always sync gradle after editing build.gradle. Android Studio will remind you.
+					<pre><code>// Add to the bottom of the file outside of dependencies
+apply plugin: 'com.google.gms.google-services'</code></pre>
+          <p  class="left-align" style="margin-top:20px;"><small class="green">
+            HINT: Always sync gradle after editing build.gradle. Android Studio will remind you.
 					</small></p>
 				</section>
 				<section>
@@ -822,27 +821,28 @@ apply plugin: 'com.google.gms.google-services'
 				  <h2>Edit your Manifest.xml</h2>
 				  <p class="left-align">Remove the launch intent filter from MainActivity.</p>
 				  <pre><code contenteditable class="xml">&lt;activity
-	android:name=&quot;.MainActivity&quot;
-	android:label=&quot;Android Beginners&quot;
-	android:theme=&quot;@style/AppTheme.NoActionBar&quot;&gt;
+  android:name=&quot;.MainActivity&quot;
+  android:label=&quot;Android Beginners&quot;
+  android:theme=&quot;@style/AppTheme.NoActionBar&quot;&gt;
 
-	&lt;!-- TODO Project 3: Remove this intent when you add the LoginActivity --&gt;
-	&lt;intent-filter&gt;
-		&lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
-		&lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
-	&lt;/intent-filter&gt;
+  &lt;!-- TODO Project 3: Remove this intent when you add the LoginActivity --&gt;
+  &lt;intent-filter&gt;
+    &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+    &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+  &lt;/intent-filter&gt;
 &lt;/activity&gt;</code></pre>
 				</section>
 				<section>
 					<h2>Edit your Manifest.xml</h2>
 					<p class="left-align">Check that your LoginActivity looks like this:</p>
 					<pre><code contenteditable class="xml">&lt;activity
-	android:name=&quot;.LoginActivity&quot;
-	android:label=&quot;@string/app_name&quot;&gt;
-	&lt;intent-filter&gt;
-		&lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
-		&lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
-	&lt;/intent-filter&gt;
+  android:name=&quot;.LoginActivity&quot;
+  android:label=&quot;@string/app_name&quot;&gt;
+
+  &lt;intent-filter&gt;
+    &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+    &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+  &lt;/intent-filter&gt;
 &lt;/activity&gt;
 </code></pre>
 				</section>
