@@ -700,25 +700,97 @@ private void dispatchTakePictureIntent() {
     }
 }</code></pre>
 					</section>
+          <section>
+					  <h2>Capture Photo Intent Result</h2>
+					  <p class="left-align">When you call startActivityForResult you have to pass a code that you can use to match the response with your request.</p>
+            <pre><code contenteditable class="java">@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+  if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
+    // A picture was just taken, let's display that in our image view
+    editImage();
+    updateMainImageFromFile();
+  }
+}</code></pre>
+					</section>
 				</section>
 				<section>
 					<section>
-						<h2>Project: Connect the Screens</h2>
-						<p>Head over to Android Studio for our second app.</p>
+						<h2>Project 2: Connect the Screens</h2>
+						<p>Head over to Android Studio for our second project.</p>
 					</section>
 					<section>
-					  <h2>Project: Connect the Screens</h2>
-					  <p class="left-align">For this project, your goal is to create intents so that each of the menu items in the drawer lead to the correct screens.</p>
-						<p class="left-align">Open MainActivity and find onNavigationItemSelected</p>
+					  <h2>Project 2: Connect the Screens</h2>
+					  <p class="left-align">For this project, your goal is to create intents so that each of the menu items in the drawer lead to the correct screens. Open MainActivity and find onNavigationItemSelected</p>
 					  <ol class="left-align">
-							<li class="left-align">nav_camera should fire a Capture Photo Intent</li>
+							<li class="left-align">nav_camera should fire a Capture Photo Intent. <small>NOTE: I have already implemented the onActivityResult with the code CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE</small></li>
 					    <li class="left-align">nav_list should display the PaintingListActivity</li>
 					    <li class="left-align">nav_grid should display the PaintingGridActivity</li>
 							<li class="left-align">nav_web should take you to this website</li>
 					    <li class="left-align">nav_share should fire a social share Intent</li>
 							<li class="left-align">nav_send should open an email Intent</li>
 					  </ol>
+            <p class="left-align" style="margin-top:20px;"><small class="green">
+              HINT: You can either try to figure those out from the previous lessons, or from <a href="https://developer.android.com/guide/components/intents-common.html">the Android docs</a>, or continue down for some copy and paste code snippets.
+            </small></p>
 					</section>
+          <section>
+            <h2>nav_camera</h2>
+            <p class="left-align">nav_camera should fire a Capture Photo Intent</p>
+            <pre><code contenteditable class="java">if (id == R.id.nav_camera) {
+  // TODO Project 2: create an intent for the MediaStore.ACTION_IMAGE_CAPTURE
+  Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+  intent.putExtra(MediaStore.EXTRA_OUTPUT, getAndroidBeginnerImageUri()); // set the image file name
+  startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+}</code></pre>
+          </section>
+          <section>
+            <h2>nav_list</h2>
+            <p class="left-align">nav_list should display the PaintingListActivity</p>
+            <pre><code contenteditable class="java">} else if (id == R.id.nav_list) {
+  // TODO Project 2: create an intent for the PaintingListActivity
+  Intent listIntent = new Intent(this, PaintingListActivity.class);
+  startActivity(listIntent);
+}</code></pre>
+          </section>
+          <section>
+            <h2>nav_grid</h2>
+            <p class="left-align">nav_grid should display the PaintingGridActivity. This is just like nav_list, but with a different class--see if you can figure this out!</p>
+          </section>
+          <section>
+            <h2>nav_web</h2>
+            <p class="left-align">nav_web should take you to this website</p>
+            <pre><code contenteditable class="java">} else if (id == R.id.nav_web) {
+  // TODO Project 2: create an intent to open a url
+  Uri webpage = Uri.parse("http://audreytroutt.com/android-beginners/");
+  Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+  if (intent.resolveActivity(getPackageManager()) != null) {
+    startActivity(intent);
+  }
+}</code></pre>
+          </section>
+          <section>
+            <h2>nav_share</h2>
+            <p class="left-align">nav_share should fire a social share Intent</p>
+            <p class="left-align">I've already implemented a shareAction() method because I need it for the Floating Action Button (FAB).</p>
+            <pre><code contenteditable class="java">} else if (id == R.id.nav_share) {
+  // TODO Project 2: create an intent to social share about this app
+  shareAction();
+}</code></pre>
+          </section>
+          <section>
+            <h2>nav_send</h2>
+            <p class="left-align">nav_send should open an email Intent</p>
+            <pre><code contenteditable class="java">} else if (id == R.id.nav_send) {
+  // TODO Project 2: create an intent to send an email
+  Intent intent = new Intent(Intent.ACTION_SENDTO);
+  intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+  intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "gdiandroidbeginners@mailinator.com"});
+  intent.putExtra(Intent.EXTRA_SUBJECT, "Testing out my Email Intent -- Success!");
+  if (intent.resolveActivity(getPackageManager()) != null) {
+    startActivity(intent);
+  }
+}</code></pre>
+          </section>
 			</section>
 
 			<!-- 3. APIs and Authentication  -->

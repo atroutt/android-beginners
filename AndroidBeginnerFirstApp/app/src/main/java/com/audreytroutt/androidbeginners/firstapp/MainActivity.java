@@ -135,24 +135,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_camera) {
             // TODO Project 2: create an intent for the MediaStore.ACTION_IMAGE_CAPTURE
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, getAndroidBeginnerImageUri()); // set the image file name
-            startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
         } else if (id == R.id.nav_list) {
             // TODO Project 2: create an intent for the PaintingListActivity
-            Intent listIntent = new Intent(this, PaintingListActivity.class);
-            startActivity(listIntent);
         } else if (id == R.id.nav_grid) {
             // TODO Project 2: create an intent for the PaintingGridActivity
-            Intent listIntent = new Intent(this, PaintingGridActivity.class);
-            startActivity(listIntent);
         } else if (id == R.id.nav_web) {
             // TODO Project 2: create an intent to open a url
-            Uri webpage = Uri.parse("http://audreytroutt.com/android-beginners/");
-            Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
-            }
         } else if (id == R.id.nav_share) {
             // TODO Project 2: create an intent to social share about this app
             shareAction();
