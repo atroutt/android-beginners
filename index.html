@@ -289,7 +289,7 @@ public class MyFirstApplication extends Application {
 }
 </code></pre>
 						<aside class="notes">
-								Before I can start showing you the code that your apps are made of, you are going to need just a tiny bit of Java.
+								      <p>What is all this (press next)</p>
 						</aside>
 					</section>
 					<section>
@@ -323,7 +323,7 @@ public class MyFirstApplication extends Application { // class
 						<p>Anything after // is a <strong class="green">comment</strong> in Java.</p>
 					  <pre><code contenteditable class ="java">// This is a comment</code></pre>
 					  <aside class="notes">
-						  Let's start with something easy: anything after double forward slashes is a comment.
+						  Let's start with something easy: anything after double forward slashes is a comment. Comments should go BEFORE the thing you are talking about, but not on the same line!!
 					  </aside>
 					</section>
 					<section>
@@ -331,7 +331,7 @@ public class MyFirstApplication extends Application { // class
 						<p>Every line of code must end with a <strong class="green">semi-colon</strong>;</p>
 					  <pre><code contenteditable class ="java">int numberOfErrors = 0;</code></pre>
 					  <aside class="notes">
-						  Let's start with something easy: you will not be able to compile if you forget your semi-colons.
+						  Every line of code ends with a semi-colon. Android Studio will put a red error on your file if you forget your semi-colons--you can't compile your code without them.
 					  </aside>
 					</section>
 					<section>
@@ -635,6 +635,14 @@ public class MyFirstApplication extends Application {
 }
 </code></pre>
 					</section>
+          <section>
+            <h2>Activity Lifecycle</h2>
+            <img src="img/anatomy-activity-lifecycle.png" />
+            <aside class="notes">
+              onCreate is just the first of many standard Android Activity methods. Activities have a lifecycle from creation, through destruction. The android operating system will call each of these methods at the appropriate time, which makes it possible to set up your screen, like we saw in onCreate, or to save things off or pause expensive operations if the screen is about to disappear.
+              You do not have to define these methods in your activity because they are defined in the Activity class that all activities inherit from. That's why we always have to call super.onCreate(...) so that the underlying code gets called.
+            </aside>
+          </section>
 					<section>
 						<h2>MainActivity</h2>
 						<p class="left-align">There will also be methods for any of the actions that can be taken with the views (buttons, toggles, menus, etc.) on the screen.</p>
@@ -1235,7 +1243,8 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 				</section>
 				<section>
 				  <h2>Google Debug Certificate</h2>
-				  <p class="left-align">In order to use Google Login you need to add your debug certificate fingerprint to our Firebase account. Follow <a href="https://developers.google.com/android/guides/client-auth">these instructions</a> to get your SHA-1 developer fingerprint.</p>
+				  <p class="left-align">In order to use Google Login you need to add your debug certificate fingerprint to our Firebase account. Follow <a href="https://developers.google.com/android/guides/client-auth">these instructions</a> to get your SHA-1 developer fingerprint. It will look something like this:</p>
+          <pre><code>SHA1: DA:39:A3:EE:5E:6B:4B:0D:32:55:BF:EF:95:60:18:90:AF:D8:07:09</code></pre>
 				</section>
 				<section>
 				  <h2>Now you can log in!</h2>
