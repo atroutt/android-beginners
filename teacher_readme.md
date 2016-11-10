@@ -24,3 +24,8 @@ These slides are intended to be hosted online, like on github pages. While you a
    ```
 
 1. Open <http://127.0.0.1:8000> to view your presentation
+
+## Keyboard shortcuts
+
+* Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen during a presentation.
+* Press s to open the presenter view (with teacher notes). This opens a new window, which is linked to the original one, so that you can navigate as usual, although you have to click on the left panel once for the keyboard shortcuts to work.
