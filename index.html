@@ -99,6 +99,14 @@
 						<p class="left-align">If you don't have it already, <a href="http://developer.android.com/sdk/index.html">download and install Android Studio</a>.</p>
 						<p class="left-align">This is the editor we will use to write our apps.</p>
 					</section>
+          <section>
+            <h2>Download Android SDKs</h2>
+            <p class="left-align">Once Android Studio is installed, go to the Android SDK Manager inside Android Studio (Tools -> Android -> SDK Manager) and check two things:</p>
+            <ol>
+              <li>Under the "SDK Platforms" tab check that Android 7.0 (Nougat) API 24 is installed or download if needed.</li>
+              <li>Then in the "SDK Tools" tab on that screen download the Support Repository / Android Support Repository if not already installed.</li>
+            </ol>
+          </section>
 					<section>
 						<h2>Get Code</h2>
 						<p class="left-align">Download the code for this class:</p>
@@ -106,7 +114,7 @@
 							<img width="30%" style="float:right" src="img/first-download-zip.png" />
 							<li>Go to <a href="https://github.com/atroutt/android-beginners" target="_blank">GitHub atroutt/android-beginners</a></li>
 							<li>On the top right press "Clone or download" and click "Download ZIP"</li>
-							<li>On your computer, open the zip files with your favorite unzip program and put the 'android-beginners' folder somewhere you can find it later. This repo contains the source for both of the apps we will be using in this class in addition to these slides.</li>
+							<li>On your computer, open the zip files with your favorite unzip program and put the 'android-beginners' folder somewhere you can find it later. This repo contains the source for the app we will be using in this class in addition to these slides.</li>
 						</ol>
 					</section>
 					<section>
@@ -170,6 +178,9 @@
 						<h2>Gradle Sync</h2>
 						<p class="left-align">Before you can run your first app, you need to make sure you have all the dependencies downloaded. To do that select "Sync Project with Gradle Files" from the top menu bar. This may take a minute.</p>
 						<img src="img/first-sync-gradle.png"/>
+            <aside class="notes">
+              If they haven't downloaded the SDKs that they need yet, there will be a lot of errors.
+            </aside>
 					</section>
 					<section>
 						<h2>Run your App (!)</h2>
