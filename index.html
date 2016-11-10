@@ -157,63 +157,115 @@
 				<!-- 1. RUNNING YOUR FIRST APP  -->
 				<section>
 					<section>
-						<h2>Running your first app</h2>
-						<p>In this section you will learn how to import a new project into Android Studio, and build and run it on your device or emulator.<p>
+						<h2>Your first app</h2>
+						<p>In this section you will learn how to create or import a new project into Android Studio, and build and run it on your device or emulator.<p>
 					</section>
-					<section>
-						<h2>Download App Code</h2>
-						<p class="left-align">If you haven't already, <br><a href="https://github.com/atroutt/android-beginners/archive/master.zip">download the source code for the first app</a> (zip).</p>
-						<p class="left-align" style="margin-top:40px">Alternatively, clone the repo using git:</p>
-						<pre><code class ="bash">git clone git@github.com:atroutt/android-beginners.git</code></pre>
-					</section>
-					<section>
-						<h2>Import Project</h2>
-						<img class="right" src="img/first-android-studio-open-project.png" alt="From the main screen when you launch Android Studio, choose Open an existing Android Studio Project"/>
-						<p class="left-align">Launch Android studio</p>
-						<p class="left-align">Choose to open an existing Android Studio Project</p>
-						<!-- TODO update this after moving the app source  -->
-						<p class="left-align">Choose the AndroidBeginnersFirstApp folder on your computer.<p>
-					</section>
-					<section>
-						<h2>Gradle Sync</h2>
-						<p class="left-align">Before you can run your first app, you need to make sure you have all the dependencies downloaded. To do that select "Sync Project with Gradle Files" from the top menu bar. This may take a minute.</p>
-						<img src="img/first-sync-gradle.png"/>
+          <section>
+            <h2>Tour of Android Studio</h2>
+            <p>There's a lot to see and do in Android Studio. Let's take a <a href="https://developer.android.com/studio/intro/index.html">brief tour</a> of the parts we will use in this course.</p>
+            <img src="img/first-run-android-studio.png"/>
+            <aside class="notes">
+              <p>Introduce these parts of Android Studio:</p>
+              <ol>
+                <li>The toolbar lets you carry out a wide range of actions, including running your app and launching Android tools.</li>
+                <li>The navigation bar helps you navigate through your project and open files for editing. It provides a more compact view of the structure visible in the Project window.</li>
+                <li>The editor window is where you create and modify code. Depending on the current file type, the editor can change. For example, when viewing a layout file, the editor displays the Layout Editor.</li>
+                <li>The tool window bar runs around the outside of the IDE window and contains the buttons that allow you to expand or collapse individual tool windows.</li>
+                <li>The tool windows give you access to specific tasks like project management, search, version control, and more. You can expand them and collapse them.</li>
+                <li>The status bar displays the status of your project and the IDE itself, as well as any warnings or messages.</li>
+              </ol>
+            </aside>
+          </section>
+          <section>
+            <h2>Create a New App</h2>
+            <p>Set the name and package for your app. Choose a project location or use the suggested directory.</p>
+            <img src="img/first-1.png" />
+            <aside class="notes">
+              Packages are how your app is uniquely identified on the device and in the app stores. Usually they look like backwards urls, but they don't actually have to match a real website.
+            </aside>
+          </section>
+          <section>
+            <h2>Create a New App</h2>
+            <p>Select Phone and Tablet and press Next</p>
+            <img src="img/first-2.png" />
+          </section>
+          <section>
+            <h2>Create a New App</h2>
+            <p>For now, select Blank Activity to start (it's the simplest) and press Next</p>
+            <img src="img/first-3.png" />
+          </section>
+          <section>
+            <h2>Create a New App</h2>
+            <p>Leave the default name and press Finish. Your app will be generated!</p>
+            <img src="img/first-4.png" />
+          </section>
+          <section>
+            <h2>Create a New App</h2>
+            <p>You should see this error-free code after Gradle, our build tool, finishes syncing.</p>
+            <img src="img/first-5.png" />
+          </section>
+          <section>
+            <h2>Run your App</h2>
+            <img style="float:right;" src="img/first-run-app.png"/>
+            <p class="left-align">In the top menu choose "Run 'app'"</p>
+            <p class="left-align">Android Studio is going to ask you to "Select Deployment Target" &mdash; this means choose the device you would like to run on</p>
+            <p class="left-align" style="margin-top:20px;"><small class="yellow">
+              PRO TIP: Check the box that says "Use same device for future launches."
+            </small></p>
+          </section>
+          <section>
+            <h2>Hello World!</h2>
+            <p>You should see this on your device!</p>
+            <img src="img/first-hello-world.png" />
+          </section>
+				</section>
+				<section>
+          <section>
+  					<h2>Project 1: First Run</h2>
+  					<p>Import and run our class app for the first time.</p>
+  					<img src="img/first-run.png"/>
+  				</section>
+          <section>
+            <h2>Download App Code</h2>
+            <p class="left-align">If you haven't already, <br><a href="https://github.com/atroutt/android-beginners/archive/master.zip">download the source code for the first app</a> (zip).</p>
+            <p class="left-align" style="margin-top:40px">Alternatively, clone the repo using git:</p>
+            <pre><code class ="bash">git clone git@github.com:atroutt/android-beginners.git</code></pre>
+          </section>
+          <section>
+            <h2>Import Project</h2>
+            <img class="right" src="img/first-android-studio-open-project.png" alt="From the main screen when you launch Android Studio, choose Open an existing Android Studio Project"/>
+            <p class="left-align">Launch Android studio</p>
+            <p class="left-align">Choose to open an existing Android Studio Project</p>
+            <!-- TODO update this after moving the app source  -->
+            <p class="left-align">Choose the AndroidBeginnersFirstApp folder on your computer.<p>
+          </section>
+          <section>
+            <h2>Gradle Sync</h2>
+            <p class="left-align">Before you can run your first app, you need to make sure you have all the dependencies downloaded. To do that select "Sync Project with Gradle Files" from the top menu bar. This may take a minute.</p>
+            <img src="img/first-sync-gradle.png"/>
             <aside class="notes">
               If they haven't downloaded the SDKs that they need yet, there will be a lot of errors.
             </aside>
-					</section>
-					<section>
-						<h2>Run your App (!)</h2>
-						<img style="float:right;" src="img/first-run-app.png"/>
-						<p class="left-align">In the top menu choose "Run 'app'"</p>
-						<p class="left-align">Android Studio is going to ask you to "Select Deployment Target" &mdash; this means choose the device you would like to run on</p>
-						<p class="left-align" style="margin-top:20px;"><small class="yellow">
-							PRO TIP: Check the box that says "Use same device for future launches."
-						</small></p>
-						<p></p>
-					</section>
-				</section>
-				<section>
-					<h2>Project: First Run</h2>
-					<p>Head over to Android Studio and run your first app.</p>
-					<img src="img/first-run.png"/>
-				</section>
-				<section>
-					<h2>Tour of Android Studio</h2>
-					<p>There's a lot to see and do in Android Studio. Let's take a <a href="https://developer.android.com/studio/intro/index.html">brief tour</a> of the parts we will use in this course.</p>
-          <img src="img/first-run-android-studio.png"/>
-          <aside class="notes">
-						<p>Introduce these parts of Android Studio:</p>
-						<ol>
-						  <li>The toolbar lets you carry out a wide range of actions, including running your app and launching Android tools.</li>
-						  <li>The navigation bar helps you navigate through your project and open files for editing. It provides a more compact view of the structure visible in the Project window.</li>
-						  <li>The editor window is where you create and modify code. Depending on the current file type, the editor can change. For example, when viewing a layout file, the editor displays the Layout Editor.</li>
-						  <li>The tool window bar runs around the outside of the IDE window and contains the buttons that allow you to expand or collapse individual tool windows.</li>
-						  <li>The tool windows give you access to specific tasks like project management, search, version control, and more. You can expand them and collapse them.</li>
-						  <li>The status bar displays the status of your project and the IDE itself, as well as any warnings or messages.</li>
-						</ol>
-					</aside>
-				</section>
+          </section>
+          <section>
+            <h2>Run your App (!)</h2>
+            <img style="float:right;" src="img/first-run-app.png"/>
+            <p class="left-align">In the top menu choose "Run 'app'"</p>
+            <p class="left-align">Android Studio is going to ask you to "Select Deployment Target" &mdash; this means choose the device you would like to run on</p>
+            <p class="left-align" style="margin-top:20px;"><small class="yellow">
+              PRO TIP: Check the box that says "Use same device for future launches."
+            </small></p>
+          </section>
+          <section>
+  					<h2>Project 1: First Run</h2>
+  					<p>If you can see this, then you are all set up!</p>
+            <p>Go ahead and snap a selfie!</p>
+  					<img src="img/first-run.png"/>
+            <aside class="notes">
+              <p>If you have some people who finish early, teach them the "Find in Path" (cmd+shift+f) command in Android Studio and see if they can figure out how to change the text that appears on the MainActivity "Take a photo of yourself..."</p>
+            </aside>
+  				</section>
+        </section>
 
 				<!-- 2. ANATOMY OF AN APP  -->
 
@@ -336,7 +388,7 @@ public class MyFirstApplication extends Application { // class
 					</section>
 					<section>
 						<h2>Just Enough Java</h2>
-						<p class="left-align">Everything in Java is an object.</p>
+						<p class="left-align">Most things in Java are object.</p>
 						<p class="left-align">A <strong class="green">class</strong> is the definition of an object in Java</p>
 						<pre><code contenteditable class ="java">// this is a class
 public class MyFirstApplication extends Application {
@@ -348,7 +400,7 @@ public class MyFirstApplication extends Application {
 							<br>
 							All of your code goes inside of classes.
 							<br>
-							You can see here that this says MyFirstApplication extends Application. That means MFA *is an* Application--it has all the fields and methods of Application PLUS anything added here in this file.
+							You can see here that this says MyFirstApplication extends Application. That means MFA *is an* Application--it has all the fields and methods of Application PLUS anything added here in this file. This is known as inheritance.
 						</aside>
 					</section>
 					<section>
@@ -638,6 +690,9 @@ public class MyFirstApplication extends Application {
           <section>
             <h2>Activity Lifecycle</h2>
             <img src="img/anatomy-activity-lifecycle.png" />
+            <p><small>
+              From <a href="https://developer.android.com/reference/android/app/Activity.html#ProcessLifecycle">developer.android.com/reference/android/app/Activity.html#ProcessLifecycle</a>
+            </small></p>
             <aside class="notes">
               onCreate is just the first of many standard Android Activity methods. Activities have a lifecycle from creation, through destruction. The android operating system will call each of these methods at the appropriate time, which makes it possible to set up your screen, like we saw in onCreate, or to save things off or pause expensive operations if the screen is about to disappear.
               You do not have to define these methods in your activity because they are defined in the Activity class that all activities inherit from. That's why we always have to call super.onCreate(...) so that the underlying code gets called.
@@ -691,12 +746,20 @@ startActivity(listIntent);</code></pre>
 					</section>
 					<section>
 						<h2>Intent</h2>
-						<p class="left-align">Intents are useful for more than switching between screens: they are the way to perform all sorts of actions in Android, from viewing contacts, to making calls, getting files from the phone, and so much more.</p>
-						<p class="left-align">Here are some <a href="https://developer.android.com/guide/components/intents-common.html">common intents</a>.</p>
+						<p class="left-align">Intents are useful for more than switching between screens. They are the way to kick off all sorts of actions from your app:</p>
+            <ul>
+              <li>making calls</li>
+              <li>viewing contacts</li>
+              <li>picking files/images</li>
+              <li>snapping images with the camera</li>
+              <li>social sharing</li>
+              <li>...and more!</li>
+            </ul>
+						<p class="left-align">Reference: <a href="https://developer.android.com/guide/components/intents-common.html">common intents</a></p>
 					</section>
 					<section>
 					  <h2>Email Intent</h2>
-					  <p class="left-align">Here's an example of a method that creates an intent to send an email</p>
+					  <p class="left-align">Here's an example of a method that creates an intent to send an email:</p>
 					  <pre><code contenteditable class="java">public void composeEmail(String[] addresses, String subject) {
 	Intent intent = new Intent(Intent.ACTION_SENDTO);
 	intent.setData(Uri.parse("mailto:")); // only email apps
@@ -709,7 +772,7 @@ startActivity(listIntent);</code></pre>
 					</section>
 					<section>
 					  <h2>Capture Photo Intent</h2>
-					  <p class="left-align">Here's an example of a method that creates an intent to capture a photo with the camera app</p>
+					  <p class="left-align">Here's an example of a method that creates an intent to capture a photo with the camera app:</p>
 					  <pre><code contenteditable class="java">static final int REQUEST_IMAGE_CAPTURE = 1;
 
 private void dispatchTakePictureIntent() {
@@ -926,7 +989,7 @@ dependencies {
 			</section>
 			<section>
 				<section>
-					<h2>Project: Google Login with Firebase</h2>
+					<h2>Project 3: Google Login with Firebase</h2>
 					<p class="left-align">For this project, your goal is to add a login screen to our app.</p>
 					<p class="left-align">We are going to use Google to log in so that we don't have to remember any usernames or passwords.</p>
 				</section>
@@ -1371,7 +1434,7 @@ canvas.drawCircle(150, 150, 50, paint);</code></pre>
 			</section>
 			<section>
 				<section>
-					<h2>Project: Image Editing</h2>
+					<h2>Project 4: Image Editing</h2>
 					<p class="left-align">For this project, your goal is to update the snapped photo to add the words "Android Developer" on top.</p>
 				</section>
 				<section>
@@ -1449,54 +1512,23 @@ saveBitmapToFile(cropped);</code></pre>
 					</ul>
 				</section>
 			</section>
-
-				<!-- The rest of these are TEMPLATE SLIDES -->
-
-				<!-- <section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/1">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
-				</section> -->
-        <section>
-          <h1>Android Beginners<br>First App</h1>
-          <p>Please complete <a href="https://goo.gl/forms/rtVmQfki5CURi1dg1">this survey</a> at the end of the class.</p>
-          <p>We want your feedback!</p>
-        </section>
-        <section>
-        	<h1>Android Beginners<br>First App</h1>
-        	<h3>Created with love by Audrey Troutt for Girl Develop It Philly</h3>
-        </section>
-			</div>
-  		<footer>
-        <div class="copyright">
-          Android for Beginners -- GDI Philadelphia --
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
-        </div>
-      </footer>
+      <section>
+        <h1>Android Beginners<br>First App</h1>
+        <p>Please complete <a href="https://goo.gl/forms/rtVmQfki5CURi1dg1">this survey</a> at the end of the class.</p>
+        <p>We want your feedback!</p>
+      </section>
+      <section>
+      	<h1>Android Beginners<br>First App</h1>
+      	<h3>Created with love by Audrey Troutt for Girl Develop It Philly</h3>
+      </section>
 		</div>
-
+		<footer>
+      <div class="copyright">
+        Android for Beginners -- GDI Philadelphia --
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+      </div>
+    </footer>
+	</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
