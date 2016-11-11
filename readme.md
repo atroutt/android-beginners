@@ -2,7 +2,12 @@
 
 This is the source for an Android development class taught in Philadelphia, PA with [Girl Develop It Philly](http://www.meetup.com/Girl-Develop-It-Philadelphia/). Slides and materials are hosted at [http://atroutt.github.io/android-beginners](http://atroutt.github.io/android-beginners).
 
-If you are looking for an online class that covers similar material, check out the [free Android classes from Google](http://developer.android.com/training/index.html), like [this one](https://www.udacity.com/course/developing-android-apps--ud853).
+If you are looking for online classes or resources for learning similar material, check out these:
+* [Google's Android Training](https://developer.android.com/training/index.html) specifically, [Building your First App](https://developer.android.com/training/basics/firstapp/index.html) (free)
+* [Udacity's Developing Android Apps](https://www.udacity.com/course/developing-android-apps--ud853) (free)
+* [Udacity's How to use Git and Github](https://www.udacity.com/course/how-to-use-git-and-github--ud775) (free)
+* [Head First Java, 2nd Edition](http://amzn.com/0596009208) by Kathy Sierra and Bert Bates
+* [Udemy's Java Tutorial for Complete Beginners](https://www.udemy.com/java-tutorial/) (free)
 
 ## Course description
 
@@ -28,21 +33,22 @@ You should have:
 
 (b) be familiar with programming concepts like variables, methods, classes, arrays, conditionals, and loops.
 
-and have a basic knowledge of source control with git for cloning repos, making commits, and pushing changes to github.
 
 ### Tech requirements:
 
- - Your laptop (Mac or Linux strongly preferred)
+ - Your laptop (Mac or Linux strongly preferred) with a power cable.
  - A Google account. If you don't already have one you can [create one for free](https://accounts.google.com/signup)
  - [Download and install Android Studio](http://developer.android.com/sdk/index.html)
+ - Once Android Studio is installed, go to the Android SDK Manager inside Android Studio (Tools -> Android -> SDK Manager) and check two things: 
+   - Under the "SDK Platforms" tab check that Android 7.0 (Nougat) API 24 is installed or download if needed.
+   - Then in the "SDK Tools" tab on that screen download the Support Repository / Android Support Repository if not already installed.
  - **Nice to have** an Android phone with Android Jellybean (4.1-4.3), KitKat (4.4), Lollipop (5.x), or Marshmallow (6.x)
     - Don't forget a USB cable to connect your device to your laptop
     - [Enable developer options](http://www.androidauthority.com/enable-developer-options-569223/) on your device to be able to connect with your computer
- - **Nice to have** A Github account. If you don't already have a github account you can [create one for free](https://github.com/personal)
 
 ### Topics covered:
 
- - Building your first app on your first day
+ - Running your first app
  - Anatomy of an app
  - APIs and authentication
  - Cameras and photos
