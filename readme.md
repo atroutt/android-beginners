@@ -5,7 +5,8 @@ This is the source for an Android development class taught in Philadelphia, PA w
 If you are looking for online classes or resources for learning similar material, check out these:
 * [Google's Android Training](https://developer.android.com/training/index.html) specifically, [Building your First App](https://developer.android.com/training/basics/firstapp/index.html) (free)
 * [Udacity's Developing Android Apps](https://www.udacity.com/course/developing-android-apps--ud853) (free)
-* [Udacity's How to use Git and Github](https://www.udacity.com/course/how-to-use-git-and-github--ud775) (free)
+
+And for getting started with Java, I recommend:
 * [Head First Java, 2nd Edition](http://amzn.com/0596009208) by Kathy Sierra and Bert Bates
 * [Udemy's Java Tutorial for Complete Beginners](https://www.udemy.com/java-tutorial/) (free)
 
