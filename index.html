@@ -149,6 +149,7 @@
   						<li>Anatomy of an app</li>
   						<li>APIs and authentication</li>
   						<li>Cameras and photos</li>
+              <li>Testing and Refactoring</li>
   					</ol>
   					<p style="margin-top:20px;"><small class="green">
   						HINT: Press <strong>ESC</strong> to enter the slide overview.
@@ -1531,6 +1532,235 @@ saveBitmapToFile(cropped);</code></pre>
 					</ul>
 				</section>
 			</section>
+      <section>
+        <section>
+          <h2>Testing</h2>
+          <p>Android tests are based off of JUnit. There are two kinds of tests: unit tests and instrumented tests.</p>
+          <p><a href="https://developer.android.com/training/testing/start/index.html">Android Test Guide</a></p>
+          <img src="img/test-kinds.png" />
+        </section>
+        <section>
+          <h2>Create Test Directories</h2>
+          <img style="float:right" src="img/test-new-folders.png" />
+          <p>Normally when you create a new project Android Studio will create the unit test and instrumented test directories for you, but I have deleted them!</p>
+          <p>Switch to Project view in the Project Tool on the left and create <code>test/java</code> and <code>androidTest/java</code> under <code>app/src</code></p>
+        </section>
+        <section>
+          <h2>Create Unit Test Class</h2>
+          <p>Cmd+click (Mac) or Ctrl+click (Windows) on test/java and Select New... -> Java Class.</p>
+          <img src="img/test-new-java-class.png" />
+          <p>Create FirstTest in package <code>com.audreytroutt.androidbeginners.firstapp</code></p>
+          <img src="img/test-create-new-class.png" />
+        </section>
+        <section>
+          <h2>Create Test Class</h2>
+          <p class="left-align">Paste in this implementation</p>
+          <pre><code contenteditable class="java">package com.audreytroutt.androidbeginners.firstapp;
+
+import org.junit.Test;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+
+public class FirstTest {
+
+  @Test
+  public void trueIsTrue() {
+      assertThat(true, is(true));
+      assertEquals(true, true);
+      assertTrue(true);
+  }
+
+  @Test
+  public void falseIsFalse() {
+      assertThat(false, is(false));
+      assertEquals(false, false);
+      assertFalse(false);
+  }
+}</code></pre>
+        </section>
+        <section>
+          <h2>Unit Test Dependencies</h2>
+          <p class="left-align">We already have the junit 4.12 dependency in our project</p>
+          <pre><code contenteditable class="java">dependencies {
+    ...
+    testCompile 'junit:junit:4.12'
+    ...
+}</code></pre>
+        </section>
+        <section>
+          <h2>Run the Unit Test</h2>
+          <p class="left-align">Cmd+click (Mac) or Ctrl+click (Windows) on FirstTest and select Run 'FirstTest'</p>
+          <img src="img/test-run-unit-test.png" />
+        </section>
+        <section>
+          <h2>Test Results</h2>
+          <p class="left-align">Down in the Run tool, you should see the results of your tests</p>
+          <img src="img/test-results.png" />
+        </section>
+        <section>
+          <h2>Create Integrated Test</h2>
+          <p>Cmd+click (Mac) or Ctrl+click (Windows) on androidTest/java and Select New... -> Java Class and create MainActivityTest in package <code>com.audreytroutt.androidbeginners.firstapp</code></p>
+          <img src="img/test-create-main-activity-test.png" />
+        </section>
+        <section>
+          <h2>Unit Test Dependencies</h2>
+          <p class="left-align">We need to add several dependencies to build Integrated Tests</p>
+          <pre><code contenteditable class="java">dependencies {
+    ...
+    // for Instrumented Tests
+    androidTestCompile 'com.android.support:support-annotations:24.2.1'
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    androidTestCompile 'com.android.support.test:rules:0.5'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2.2', {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+        exclude group: 'com.android.support', module: 'design'
+    })
+    ...
+  }</code></pre>
+        </section>
+        <section>
+          <h2>Create Integrated Test</h2>
+          <p class="left-align">Paste in this implementation</p>
+          <pre><code contenteditable class="java">package com.audreytroutt.androidbeginners.firstapp;
+
+import android.support.test.filters.LargeTest;
+import android.support.test.rule.ActivityTestRule;
+import android.support.test.runner.AndroidJUnit4;
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.contrib.DrawerActions.open;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
+
+@RunWith(AndroidJUnit4.class)
+@LargeTest
+public class MainActivityTest {
+
+    /**
+     * ActivityTestRule will create and launch of the activity for you and also expose
+     * the activity under test. To get a reference to the activity you can use
+     * the ActivityTestRule#getActivity() method.
+     */
+    @Rule
+    public ActivityTestRule&lt;MainActivity&gt; mActivityRule = new ActivityTestRule&lt;&gt;(MainActivity.class);
+
+    @Test
+    public void navigateToPaintingList() throws Exception {
+        onView(withId(R.id.drawer_layout)).perform(open());
+
+        onView(withText("Painting List")).perform(click());
+
+        onView(withId(R.id.painting_list_recycler_view)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void navigateToPaintingGrid() throws Exception {
+        onView(withId(R.id.drawer_layout)).perform(open());
+
+        onView(withText("Painting Grid")).perform(click());
+
+        onView(withId(R.id.painting_grid_recycler_view)).check(matches(isDisplayed()));
+    }
+}</code></pre>
+        </section>
+        <section>
+          <h2>Run the Unit Test</h2>
+          <p class="left-align">Cmd+click (Mac) or Ctrl+click (Windows) on FirstTest and select Run 'FirstTest'</p>
+          <img src="img/test-run-unit-test.png" />
+        </section>
+        <section>
+          <h2>Test Results</h2>
+          <p class="left-align">Down in the Run tool, you should see the results of your tests</p>
+          <img src="img/test-integrated-results.png" />
+        </section>
+        <section>
+          <h2>Refactoring</h2>
+          <img style="float:right" src="img/test-refactor.png" />
+          <p class="left-align">Usually the first way you write your code isn't the best way to write it.</p>
+          <p class="left-align">Refactoring means changing the way the code is written without changing the behavior of the code.</p>
+        </section>
+        <section>
+          <h2>Refactoring</h2>
+          <p class="left-align">Here are some of the most common refactoring moves and how to do them in Android Studio:</p>
+          <ol>
+            <li>Rename a method or a variable or a class <small class="yellow">shift+fn+F6 (Mac)</small></li>
+            <li>Extract a method or a variable <small class="yellow">option+cmd+v for variable, option+cmd+m for method (Mac)</small></li>
+            <li>Move code from one method or class to another <small class="yellow">shift+F6 to move a method to another class (Mac)</small></li>
+            <li>Delete code that isn't needed</li>
+            <li>Rewrite code or replace with library code</li>
+          </ol>
+        </section>
+        <section>
+          <h2>Refactoring and Testing</h2>
+          <p class="left-align">Refactoring and testing go hand and hand--in order to feel confident that you can refactor without breaking things, you need tests you can run to prove that everything is still working as expected.</p>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>Project 5: More Tests</h2>
+          <p class="left-align">Create a new class DeveloperDaysCalculator and write test for it.</p>
+          <pre><code contenteditable class="java">package com.audreytroutt.androidbeginners.firstapp;
+
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+public class DeveloperDaysCalculator {
+
+    public static long daysIveBeenAnAndroidDeveloper(Date startDate, Date today) {
+        final long millisecondsAsAndroidDeveloper = today.getTime() - startDate.getTime();
+        long daysAsAndroidDeveloper = TimeUnit.MILLISECONDS.toDays(millisecondsAsAndroidDeveloper);
+        return daysAsAndroidDeveloper;
+    }
+}</code></pre>
+        </section>
+        <section>
+          <h2>Project 5: More Tests</h2>
+          <p class="left-align">Create a new unit test class DeveloperDaysCalculatorTests and write tests!</p>
+          <pre><code contenteditable class="java">package com.audreytroutt.androidbeginners.firstapp;
+
+import org.junit.Test;
+import java.util.Calendar;
+import static org.junit.Assert.assertEquals;
+
+public class DeveloperDaysCalculatorTests {
+
+    @Test
+    public void calculateDaysIveBeenAnAndroidDeveloper() {
+        Calendar today = Calendar.getInstance();
+        today.set(2016, Calendar.NOVEMBER, 13, 20, 01); // 11/14/2016
+
+        // 1. TODO make a startDate
+
+        // 2. TODO call DeveloperDaysCalculator.daysIveBeenAnAndroidDeveloper
+
+        // 3. TODO make a test assertion about what the days should be
+
+    }
+}</code></pre>
+        </section>
+        <section>
+          <h1>BONUS: Refactor and use ButterKnife</h1>
+          <p>We can refactor our app to take advantage of <a href="https://github.com/JakeWharton/butterknife">ButterKnife</a>!</p>
+          <pre><code contenteditable class="java">dependencies {
+  compile 'com.jakewharton:butterknife:8.4.0'
+  annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+}</code></pre>
+        </section>
+      </section>
       <section>
         <h1>Android For Beginners</h1>
         <p>Please complete the class survey: <a href="https://goo.gl/forms/rtVmQfki5CURi1dg1">https://goo.gl/forms/rtVmQfki5CURi1dg1</a> </p>
