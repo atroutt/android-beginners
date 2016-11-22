@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -25,6 +28,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.auth.api.Auth;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -109,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.action_sign_out) {
             // TODO Project 3: implement sign out
+
             return true;
         } else if (id == R.id.action_delete_photo) {
             File savedImage = getAndroidBeginnerImageFile();
@@ -135,12 +143,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_camera) {
             // TODO Project 2: create an intent for the MediaStore.ACTION_IMAGE_CAPTURE
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                try {
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, getAndroidBeginnerImageUri()); // set the image file name
+                    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+                } catch (Exception e) {
+                    Toast.makeText(this, "We caught an error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            } else {
+                Toast.makeText(this, "No Camera!", Toast.LENGTH_LONG).show();
+            }
         } else if (id == R.id.nav_list) {
             // TODO Project 2: create an intent for the PaintingListActivity
+            Intent listIntent = new Intent(this, PaintingListActivity.class);
+            startActivity(listIntent);
         } else if (id == R.id.nav_grid) {
             // TODO Project 2: create an intent for the PaintingGridActivity
+            Intent listIntent = new Intent(this, PaintingGridActivity.class);
+            startActivity(listIntent);
         } else if (id == R.id.nav_web) {
             // TODO Project 2: create an intent to open a url
+            Uri webpage = Uri.parse("http://audreytroutt.com/android-beginners/");
+            Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }
         } else if (id == R.id.nav_share) {
             // TODO Project 2: create an intent to social share about this app
             shareAction();
@@ -187,6 +216,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Uri getAndroidBeginnerImageUri() {
         if (androidBeginnerImageUri == null) {
             androidBeginnerImageUri = Uri.fromFile(getAndroidBeginnerImageFile());
+
+            Log.d("MainActivity", "Uri is " + androidBeginnerImageUri.toString());
         }
         return androidBeginnerImageUri;
     }
@@ -274,7 +305,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Bitmap cropped = centerCropBitmapToSquareSize(bmp, croppedImageSize);
 
         // TODO Project 4: Draw text on the cropped image
+        Canvas canvas = new Canvas(cropped);
+        Paint paint = new Paint();
 
+        // I want the text to be about 1/10 as tall as the image
+        final int textSize = croppedImageSize / 10;
+        paint.setTextSize(textSize);
+        paint.setColor(ResourcesCompat.getColor(getResources(), R.color.colorPrimaryDark, null));
+
+        // it works out to start the text about 1/10 of the way into the image from the left, which is the same as our text size.
+        final int textXPosition = textSize;
+        // I want the text to be a little above the bottom of the image
+        final int textYPosition = croppedImageSize - (textSize / 2);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final String label = getResources().getString(R.string.android_developer_image_label, user.getDisplayName());
+        canvas.drawText(label, textXPosition, textYPosition, paint);
 
         // Finally, save the edited image back to the file
         saveBitmapToFile(cropped);
