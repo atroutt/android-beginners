@@ -212,7 +212,7 @@
           </section>
           <section>
             <h2>Create a New App</h2>
-            <p>For now, select Blank Activity to start (it's the simplest) and press Next</p>
+            <p>For now, select Empty Activity to start (it's the simplest) and press Next</p>
             <img src="img/first-3.png" />
           </section>
           <section>
@@ -1044,7 +1044,7 @@ apply plugin: 'com.google.gms.google-services'</code></pre>
 				</section>
 				<section>
 				  <h2>Create Login Activity</h2>
-				  <p class="left-align">Go to File->New->Activity and choose "Basic Activity"</p>
+				  <p class="left-align">Go to File->New->Activity and choose "Empty Activity"</p>
 					<img src="img/auth-create-login-activity.png"/>
 				</section>
 				<section>
@@ -1224,18 +1224,20 @@ public void onStop() {
 				<section>
 				  <h2>Listen for button presses</h2>
 				  <p class="left-align">Make Your LoginActivity the listener for the sign in button and implement an onClick method.</p>
-				  <pre><code contenteditable class="java">public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, OnClickListener {
-
-  private static final int RC_SIGN_IN = 111;
-  // ...
+				  <pre><code contenteditable class="java">
+                                                                                                            // # 1 ADD IMPLEMENTS OnClickListener
+public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, OnClickListener {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     // ...
+
+    // # 3 setOnClickListener
     mSignInButton.setOnClickListener(this);
     // ...
   }
 
+  // # 2 ADD onClick
   @Override
   public void onClick(View v) {
     if (R.id.sign_in_button == v.getId()) {
@@ -1259,7 +1261,11 @@ public void onClick(View v) {
 				<section>
 				  <h2>Handle Google Login response</h2>
 				  <p class="left-align">When the Google auth is done it will call back to our LoginActivity onActivityResult method. If successful we want to tell Firebase who you are.</p>
-				  <pre><code contenteditable class="java">@Override
+				  <pre><code contenteditable class="java">private static final int RC_SIGN_IN = 111;
+
+// ...
+
+@Override
 public void onActivityResult(int requestCode, int resultCode, Intent data) {
   super.onActivityResult(requestCode, resultCode, data);
 
